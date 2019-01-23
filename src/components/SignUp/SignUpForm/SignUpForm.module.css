@@ -1,0 +1,17 @@
+.SignUpForm {
+  margin: 0 auto;
+}
+
+.SignUpForm input{
+  display: block;
+  font-size: 1rem;
+  margin: 0.5em auto;
+  padding: 0.2em;
+  width: 90%;
+  max-width: 22em;
+  
+}
+
+.SignUpForm button {
+  margin-top: 1em;
+}

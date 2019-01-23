@@ -1,0 +1,44 @@
+.Button {
+  background-color: transparent;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  height: 2.2em;
+  line-height: 1;
+  margin: 0;
+  transition: 0.125s ease-in-out;
+}
+
+.Button:focus {
+  outline: none;
+}
+
+.Primary {
+  background: var(--accent);
+  border: none;
+  color: var(--font-dark);
+  font-size: 1.25rem;
+  padding: 0.5em 1.25em;
+  text-transform: uppercase;
+  width: 10.2em;
+}
+
+.Primary:hover {
+  background: var(--accent-darken);
+}
+
+.Secondary {
+  background: transparent;
+  border: 0.095em solid var(--accent);
+  color: var(--accent);
+  font-size: 1.25rem;
+  padding: 0.5em 1.25em;
+  text-transform: uppercase;
+  width: 10.2em;
+}
+
+.Secondary:hover {
+  background: var(--accent-darken);
+}
