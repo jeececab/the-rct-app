@@ -29,6 +29,10 @@
   background: var(--accent-darken);
 }
 
+.Primary:disabled {
+  cursor: not-allowed;
+}
+
 .Secondary {
   background: transparent;
   border: 0.095em solid var(--accent);

@@ -8,7 +8,8 @@ import Button from '../../UI/Button/Button';
 
 const INITIAL_STATE = {
   username: '',
-  email: '',
+  emailOne: '',
+  emailTwo: '',
   passwordOne: '',
   passwordTwo: '',
   error: null
@@ -18,10 +19,10 @@ class SignUpFormBase extends Component {
   state = { ...INITIAL_STATE };
 
   onSubmit = event => {
-    const { username, email, passwordOne } = this.state;
+    const { username, emailOne, passwordOne } = this.state;
 
     this.props.firebase
-      .doCreateUserWithEmailAndPassword(email, passwordOne)
+      .doCreateUserWithEmailAndPassword(emailOne, passwordOne)
       .then(authUser => {
         this.setState({ ...INITIAL_STATE });
         this.props.history.push(ROUTES.ACCOUNT);
@@ -38,12 +39,13 @@ class SignUpFormBase extends Component {
   };
 
   render() {
-    const { username, email, passwordOne, passwordTwo, error } = this.state;
+    const { username, emailOne, emailTwo, passwordOne, passwordTwo, error } = this.state;
 
     const isInvalid =
       passwordOne !== passwordTwo ||
       passwordOne === '' ||
-      email === '' ||
+      emailOne !== emailTwo ||
+      emailOne === '' ||
       username === '';
 
     return (
@@ -56,11 +58,18 @@ class SignUpFormBase extends Component {
           placeholder="Full Name"
         />
         <input
-          name="email"
-          value={email}
+          name="emailOne"
+          value={emailOne}
           onChange={this.onChange}
           type="text"
           placeholder="Email Address"
+        />
+        <input
+          name="emailTwo"
+          value={emailTwo}
+          onChange={this.onChange}
+          type="text"
+          placeholder="Confirm Email Address"
         />
         <input
           name="passwordOne"
