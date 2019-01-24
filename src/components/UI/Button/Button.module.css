@@ -42,3 +42,17 @@
 .Secondary:hover {
   background: var(--accent-darken);
 }
+
+.Secondary-small {
+  background: transparent;
+  border: 0.095em solid var(--accent);
+  color: var(--accent);
+  font-size: 1rem;
+  margin: 0.5em;
+  padding: 0.5em 0.5em;
+  text-transform: uppercase;
+}
+
+.Secondary-small:hover {
+  background: var(--accent-darken);
+}

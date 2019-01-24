@@ -43,7 +43,7 @@ const landing = props => {
 
           <div className={classes.LandingBtns}>
             <Link to={ROUTES.SIGN_UP} className={classes.LandingBtnsPrimary}>Get started</Link>
-            <Link to={ROUTES.SIGN_IN} className={classes.LandingBtnsSecondary}>Log in</Link>
+            <Link to={ROUTES.SIGN_IN} className={classes.LandingBtnsSecondary}>Sign in</Link>
           </div>
         </div>
       </div>

@@ -1,8 +1,8 @@
-.SignUpForm {
+.SignInForm {
   margin: 0 auto;
 }
 
-.SignUpForm input{
+.SignInForm input{
   display: block;
   font-size: 1rem;
   margin: 0.7em auto;
@@ -12,6 +12,6 @@
   
 }
 
-.SignUpForm button {
-  margin-top: 1em;
+.SignInForm button {
+  margin: 0.8em 0;
 }

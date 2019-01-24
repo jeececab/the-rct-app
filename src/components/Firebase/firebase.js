@@ -1,6 +1,6 @@
 import app from 'firebase/app';
 import 'firebase/auth';
-import CONFIG from '../../../config';
+import CONFIG from '../../config';
 
 const config = {
   apiKey: CONFIG.apiKey,

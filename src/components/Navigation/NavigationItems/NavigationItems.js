@@ -1,12 +1,14 @@
 import React from 'react';
 import classes from './NavigationItems.module.css';
 import NavigationItem from './NavigationItem/NavigationItem';
+import * as ROUTES from '../../../constants/routes';
+import SignOutButton from '../../SignOutButton/SignOutButton';
 
 const navigationItems = () => (
   <ul className={classes.NavigationItems}>
-    <NavigationItem link="/account" exact>My Account</NavigationItem>
-    <NavigationItem link="/season">Season</NavigationItem>
-    <NavigationItem link="/welcome">Log Out</NavigationItem>
+    <NavigationItem link={ROUTES.ACCOUNT} exact>My Account</NavigationItem>
+    <NavigationItem link={ROUTES.SEASON}>Season</NavigationItem>
+    <SignOutButton />
   </ul>
 );
 
