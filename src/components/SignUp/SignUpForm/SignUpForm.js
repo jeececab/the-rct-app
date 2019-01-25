@@ -6,9 +6,9 @@ import Button from '../../UI/Button/Button';
 
 const INITIAL_STATE = {
   username: '',
-  emailOne: '',
+  email: '',
   emailTwo: '',
-  passwordOne: '',
+  password: '',
   passwordTwo: '',
   error: null
 };
@@ -17,18 +17,18 @@ class SignUpForm extends Component {
   state = { ...INITIAL_STATE };
 
   onSubmit = event => {
-    const { username, emailOne, passwordOne } = this.state;
+    const { username, email, password } = this.state;
 
     this.props.firebase
-      .doCreateUserWithEmailAndPassword(emailOne, passwordOne)
+      .doCreateUserWithEmailAndPassword(email, password)
       .then(authUser => {
         // Create a user in your Firebase realtime database
         return this.props.firebase.user(authUser.user.uid).set({
           username,
-          emailOne
+          email
         });
       })
-      .then(authUser => {
+      .then(() => {
         this.setState({ ...INITIAL_STATE });
         this.props.history.push(ROUTES.ACCOUNT);
       })
@@ -46,18 +46,18 @@ class SignUpForm extends Component {
   render() {
     const {
       username,
-      emailOne,
+      email,
       emailTwo,
-      passwordOne,
+      password,
       passwordTwo,
       error
     } = this.state;
 
     const isInvalid =
-      passwordOne !== passwordTwo ||
-      passwordOne === '' ||
-      emailOne !== emailTwo ||
-      emailOne === '' ||
+      password !== passwordTwo ||
+      password === '' ||
+      email !== emailTwo ||
+      email === '' ||
       username === '';
 
     return (
@@ -70,8 +70,8 @@ class SignUpForm extends Component {
           placeholder="Full Name"
         />
         <input
-          name="emailOne"
-          value={emailOne}
+          name="email"
+          value={email}
           onChange={this.onChange}
           type="text"
           placeholder="Email Address"
@@ -84,8 +84,8 @@ class SignUpForm extends Component {
           placeholder="Confirm Email Address"
         />
         <input
-          name="passwordOne"
-          value={passwordOne}
+          name="password"
+          value={password}
           onChange={this.onChange}
           type="password"
           placeholder="Password"

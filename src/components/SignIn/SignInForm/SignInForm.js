@@ -11,11 +11,7 @@ const INITIAL_STATE = {
 };
 
 class SignInForm extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { ...INITIAL_STATE };
-  }
+  state = { ...INITIAL_STATE };
 
   onSubmit = event => {
     const { email, password } = this.state;
@@ -68,10 +64,5 @@ class SignInForm extends Component {
     );
   }
 }
-/* 
-const SignInForm = compose(
-  withRouter,
-  withFirebase
-)(SignInFormBase); */
 
 export default withFirebase(SignInForm);
