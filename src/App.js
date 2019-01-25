@@ -4,7 +4,6 @@ import Layout from './hoc/Layout/Layout';
 import * as ROUTES from './constants/routes';
 import { withFirebase } from './components/Firebase';
 import { compose } from 'recompose';
-
 import { AuthUserContext } from './components/Session';
 import Landing from './components/Landing/Landing';
 import SignUp from './components/SignUp/SignUp';
@@ -53,13 +52,9 @@ class AppBase extends Component {
 
     return (
       <AuthUserContext.Provider value={this.state.authUser}>
-        <div>
-          <AuthUserContext.Consumer>
-            {authUser =>
-              authUser ? routesAuth : routesNonAuth
-            }
-          </AuthUserContext.Consumer>
-        </div>
+        <AuthUserContext.Consumer>
+          {authUser => (authUser ? routesAuth : routesNonAuth)}
+        </AuthUserContext.Consumer>
       </AuthUserContext.Provider>
     );
   }

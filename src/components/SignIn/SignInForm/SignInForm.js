@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import classes from './SignInForm.module.css';
 import * as ROUTES from '../../../constants/routes';
-import { withRouter } from 'react-router-dom';
-import { compose } from 'recompose';
 import { withFirebase } from '../../Firebase/index';
 import Button from '../../UI/Button/Button';
 
@@ -12,7 +10,7 @@ const INITIAL_STATE = {
   error: null
 };
 
-class SignInFormBase extends Component {
+class SignInForm extends Component {
   constructor(props) {
     super(props);
 
@@ -70,10 +68,10 @@ class SignInFormBase extends Component {
     );
   }
 }
-
+/* 
 const SignInForm = compose(
   withRouter,
   withFirebase
-)(SignInFormBase);
+)(SignInFormBase); */
 
-export default SignInForm;
+export default withFirebase(SignInForm);

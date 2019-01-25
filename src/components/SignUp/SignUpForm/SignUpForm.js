@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import classes from './SignUpForm.module.css';
-import { compose } from 'recompose';
-import { withRouter } from 'react-router-dom';
 import { withFirebase } from '../../Firebase/index';
 import * as ROUTES from '../../../constants/routes';
 import Button from '../../UI/Button/Button';
@@ -15,7 +13,7 @@ const INITIAL_STATE = {
   error: null
 };
 
-class SignUpFormBase extends Component {
+class SignUpForm extends Component {
   state = { ...INITIAL_STATE };
 
   onSubmit = event => {
@@ -23,6 +21,13 @@ class SignUpFormBase extends Component {
 
     this.props.firebase
       .doCreateUserWithEmailAndPassword(emailOne, passwordOne)
+      .then(authUser => {
+        // Create a user in your Firebase realtime database
+        return this.props.firebase.user(authUser.user.uid).set({
+          username,
+          emailOne
+        });
+      })
       .then(authUser => {
         this.setState({ ...INITIAL_STATE });
         this.props.history.push(ROUTES.ACCOUNT);
@@ -39,7 +44,14 @@ class SignUpFormBase extends Component {
   };
 
   render() {
-    const { username, emailOne, emailTwo, passwordOne, passwordTwo, error } = this.state;
+    const {
+      username,
+      emailOne,
+      emailTwo,
+      passwordOne,
+      passwordTwo,
+      error
+    } = this.state;
 
     const isInvalid =
       passwordOne !== passwordTwo ||
@@ -95,9 +107,4 @@ class SignUpFormBase extends Component {
   }
 }
 
-const SignUpForm = compose(
-  withRouter,
-  withFirebase
-)(SignUpFormBase);
-
-export default SignUpForm;
+export default withFirebase(SignUpForm);
