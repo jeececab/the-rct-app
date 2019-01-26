@@ -17,11 +17,10 @@ class Season extends Component {
   };
 
   render() {
-    const { data } = this.props;
+    const { season } = this.props;
     
-    const days = _.map(data, (day, key) => {
-      console.log(day, key)
-      return <Day key={key} dayId={key} day={day}/>
+    const days = _.map(season, (day, key) => {
+      return <Day key={key} dayId={key} title={day.title}/>
     })
 
     return (
@@ -35,9 +34,9 @@ class Season extends Component {
 }
 
 
-const mapStateToProps = ({ data }) => {
+const mapStateToProps = ({ season }) => {
   return {
-    data
+    season
   };
 };
 

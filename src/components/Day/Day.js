@@ -10,10 +10,10 @@ class Day extends Component {
   };
 
   render() {
-    const { dayId, day, key } = this.props;
+    const { dayId, title, key } = this.props;
     return (
       <div key={key} className={classes.Day}>
-        <h2>{day.title}</h2>
+        <h2>{title}</h2>
         <button onClick={() => this.handleDeleteDay(dayId)}>Delete Day</button>
       </div>
     );
