@@ -27,26 +27,47 @@ const App = () => (
 
 export default withAuthentication(App); */
 import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-//import * as ROUTES from './constants/routes';
+import * as ROUTES from './constants/routes';
 
+import requireAuth from './components/Auth/requireAuth';
 import Navigation from './components/Navigation/Navigation';
-//import Landing from './components/Landing/Landing';
+import Landing from './components/Landing/Landing';
+import SignIn from './components/SignIn/SignIn';
+import Account from './components/Account/Account';
 import Season from './containers/Season/Season'
 
+import { fetchUser } from './store/actions'
+
 class App extends Component {
+  componentWillMount() {
+    this.props.fetchUser();
+  }
+
   render() {
+    const { auth } = this.props;
+    
+    console.log(auth)
+
     return (
       <BrowserRouter>
         <React.Fragment>
           <Navigation />
-          
-          <Season />
+
+          <Route exact path={ROUTES.LANDING} component={Landing} />
+          <Route exact path={ROUTES.SIGN_IN} component={SignIn} />
+          <Route exact path={ROUTES.ACCOUNT} component={requireAuth(Account)} />
+          <Route exact path={ROUTES.SEASON} component={requireAuth(Season)} />
         </React.Fragment>
       </BrowserRouter>
     );
   }
 }
 
-export default App;
+function mapStateToProps({ auth }) {
+  return { auth };
+}
+
+export default connect(mapStateToProps, { fetchUser })(App);

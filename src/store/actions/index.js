@@ -1,6 +1,7 @@
-import { daysRef } from '../../config/firebase';
-import { FETCH_DAYS } from './types';
+import { daysRef, authRef } from '../../config/firebase';
+import { FETCH_DAYS, FETCH_USER } from './types';
 
+// SEASON ACTIONS
 export const addDay = newDay => async () => {
   daysRef.push().set(newDay);
 };
@@ -16,4 +17,42 @@ export const fetchDays = () => async dispatch => {
       payload: snapshot.val()
     });
   });
+};
+
+// AUTH ACTIONS
+
+export const fetchUser = () => dispatch => {
+  authRef.onAuthStateChanged(user => {
+    if (user) {
+      dispatch({
+        type: FETCH_USER,
+        payload: user
+      });
+    } else {
+      dispatch({
+        type: FETCH_USER,
+        payload: null
+      });
+    }
+  });
+};
+
+export const signIn = (email, password) => dispatch => {
+  authRef
+    .signInWithEmailAndPassword(email, password)
+    .then(result => {})
+    .catch(error => {
+      console.log(error);
+    });
+};
+
+export const signOut = () => dispatch => {
+  authRef
+    .signOut()
+    .then(() => {
+      // Sign-out successful.
+    })
+    .catch(error => {
+      console.log(error);
+    });
 };
