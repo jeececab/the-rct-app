@@ -7,6 +7,7 @@ import Day from '../../components/Day/Day';
 
 class Season extends Component {
   componentWillMount() {
+    console.log(actions)
     this.props.fetchDays();
   }
 

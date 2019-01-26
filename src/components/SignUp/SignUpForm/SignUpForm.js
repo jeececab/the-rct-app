@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import classes from './SignUpForm.module.css';
-import { withRouter } from 'react-router-dom'
-import { withFirebase } from '../../Firebase/index';
-import { compose } from 'recompose'
+import { connect } from 'react-redux';
+import { signUp } from '../../../store/actions';
+import PropTypes from 'prop-types';
 import * as ROUTES from '../../../constants/routes';
 import Button from '../../UI/Button/Button';
 
@@ -15,29 +15,23 @@ const INITIAL_STATE = {
   error: null
 };
 
-class SignUpFormBase extends Component {
+class SignUpForm extends Component {
   state = { ...INITIAL_STATE };
 
-  onSubmit = event => {
-    const { username, email, password } = this.state;
+  static contextTypes = {
+    router: PropTypes.object
+  };
 
-    this.props.firebase
-      .doCreateUserWithEmailAndPassword(email, password)
-      .then(authUser => {
-        // Create a user in your Firebase realtime database
-        return this.props.firebase.user(authUser.user.uid).set({
-          username,
-          email
-        });
-      })
-      .then(() => {
-        this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.ACCOUNT);
-      })
-      .catch(error => {
-        this.setState({ error });
-      });
+  componentWillUpdate(nextProps) {
+    if (nextProps.auth) {
+      this.context.router.history.push(ROUTES.ACCOUNT);
+    }
+  }
 
+  handleSubmit = event => {
+    const { signUp } = this.props;
+    const { email, password } = this.state;
+    signUp(email, password)
     event.preventDefault();
   };
 
@@ -63,7 +57,7 @@ class SignUpFormBase extends Component {
       username === '';
 
     return (
-      <form onSubmit={this.onSubmit} className={classes.SignUpForm}>
+      <form onSubmit={this.handleSubmit} className={classes.SignUpForm}>
         <input
           name="username"
           value={username}
@@ -109,9 +103,9 @@ class SignUpFormBase extends Component {
   }
 }
 
-const SignUpForm = compose(
-  withRouter,
-  withFirebase,
-)(SignUpFormBase);
+function mapStateToProps({ auth }) {
+  return { auth };
+}
 
-export default SignUpForm;
+export default connect(mapStateToProps, { signUp })(SignUpForm);
+

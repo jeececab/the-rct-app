@@ -2,10 +2,9 @@ import React from 'react';
 import classes from './SignUp.module.css';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
-import { withAuthorization } from '../Session';
 import SignUpForm from './SignUpForm/SignUpForm';
 
-const signUp = () => {
+const SignUp = () => {
   return (
     <div className={classes.SignUp}>
       <h1>Sign Up</h1>
@@ -17,6 +16,4 @@ const signUp = () => {
   );
 };
 
-const condition = authUser => !authUser;
-
-export default withAuthorization(condition)(signUp);
+export default SignUp;
