@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Landing from './components/Landing/Landing';
 import SignUp from './components/SignUp/SignUp';
@@ -25,4 +25,28 @@ const App = () => (
   </Router>
 );
 
-export default withAuthentication(App);
+export default withAuthentication(App); */
+import React, { Component } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+
+//import * as ROUTES from './constants/routes';
+
+import Navigation from './components/Navigation/Navigation';
+//import Landing from './components/Landing/Landing';
+import Season from './containers/Season/Season'
+
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <React.Fragment>
+          <Navigation />
+          
+          <Season />
+        </React.Fragment>
+      </BrowserRouter>
+    );
+  }
+}
+
+export default App;

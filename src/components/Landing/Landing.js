@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import classes from './Landing.module.css';
 import * as ROUTES from '../../constants/routes';
 import LandingImage from '../../assets/images/welcome-img.jpg';
-import { withAuthorization } from '../Session'
 
 const Landing = () => {
   return (
@@ -52,6 +51,4 @@ const Landing = () => {
   );
 };
 
-const condition = authUser => !authUser;
-
-export default withAuthorization(condition)(Landing);
+export default Landing;
