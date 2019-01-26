@@ -3,26 +3,32 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import * as ROUTES from '../../constants/routes';
 
-export default function(ComposedComponent) {
+export default function(ComposedComponent, nonAuth) {
   class Authentication extends Component {
     static contextTypes = {
       router: PropTypes.object
     };
 
     componentWillMount() {
-      if (this.props.authenticated === null) {
-        this.context.router.history.push(ROUTES.LANDING);
+      if (this.props.authenticated === null && !nonAuth) {
+        this.context.router.history.push('/');
+      } else if (this.props.authenticated && nonAuth) {
+        this.context.router.history.push(ROUTES.ACCOUNT);
       }
     }
 
     componentWillUpdate(nextProps) {
-      if (!nextProps.authenticated) {
-        this.context.router.history.push(ROUTES.LANDING);
+      if (!nextProps.authenticated && !nonAuth) {
+        this.context.router.history.push('/');
+      } else if (nextProps.authenticated && nonAuth) {
+        this.context.router.history.push(ROUTES.ACCOUNT)
       }
     }
 
     render() {
       if (this.props.authenticated) {
+        return <ComposedComponent {...this.props} />;
+      } else if (!this.props.authenticated) {
         return <ComposedComponent {...this.props} />;
       }
       return null;
