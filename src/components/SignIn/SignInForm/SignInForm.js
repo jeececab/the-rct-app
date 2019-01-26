@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import classes from './SignInForm.module.css';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'recompose';
 import * as ROUTES from '../../../constants/routes';
 import { withFirebase } from '../../Firebase/index';
 import Button from '../../UI/Button/Button';
@@ -10,7 +12,7 @@ const INITIAL_STATE = {
   error: null
 };
 
-class SignInForm extends Component {
+class SignInFormBase extends Component {
   state = { ...INITIAL_STATE };
 
   onSubmit = event => {
@@ -65,4 +67,9 @@ class SignInForm extends Component {
   }
 }
 
-export default withFirebase(SignInForm);
+const SignInForm = compose(
+  withRouter,
+  withFirebase,
+)(SignInFormBase);
+
+export default SignInForm;

@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import classes from "./Layout.module.css";
-import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
-import SideDrawer from "../../components/Navigation/SideDrawer/SideDrawer";
+import React, { Component } from 'react';
+import classes from './Layout.module.css';
+import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
+import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
+import { AuthUserContext } from '../../components/Session';
 
 class Layout extends Component {
   state = {
@@ -19,7 +20,7 @@ class Layout extends Component {
   };
 
   render() {
-    return (
+    const LayoutAuth = () => (
       <React.Fragment>
         <Toolbar drawerToggleClicked={this.sideDrawerToggleHandler} />
         <SideDrawer
@@ -28,6 +29,14 @@ class Layout extends Component {
         />
         <main className={classes.Content}>{this.props.children}</main>
       </React.Fragment>
+    );
+
+    const LayoutNonAuth = () => null;
+
+    return (
+      <AuthUserContext.Consumer>
+        {authUser => (authUser ? <LayoutAuth /> : <LayoutNonAuth />)}
+      </AuthUserContext.Consumer>
     );
   }
 }

@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import classes from './Landing.module.css';
 import * as ROUTES from '../../constants/routes';
 import LandingImage from '../../assets/images/welcome-img.jpg';
+import { withAuthorization } from '../Session'
 
-const landing = props => {
+const Landing = () => {
   return (
     <React.Fragment>
       <div className={classes.Landing}>
@@ -51,4 +52,6 @@ const landing = props => {
   );
 };
 
-export default landing;
+const condition = authUser => !authUser;
+
+export default withAuthorization(condition)(Landing);

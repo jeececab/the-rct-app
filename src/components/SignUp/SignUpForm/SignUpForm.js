@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import classes from './SignUpForm.module.css';
+import { withRouter } from 'react-router-dom'
 import { withFirebase } from '../../Firebase/index';
+import { compose } from 'recompose'
 import * as ROUTES from '../../../constants/routes';
 import Button from '../../UI/Button/Button';
 
@@ -13,7 +15,7 @@ const INITIAL_STATE = {
   error: null
 };
 
-class SignUpForm extends Component {
+class SignUpFormBase extends Component {
   state = { ...INITIAL_STATE };
 
   onSubmit = event => {
@@ -107,4 +109,9 @@ class SignUpForm extends Component {
   }
 }
 
-export default withFirebase(SignUpForm);
+const SignUpForm = compose(
+  withRouter,
+  withFirebase,
+)(SignUpFormBase);
+
+export default SignUpForm;

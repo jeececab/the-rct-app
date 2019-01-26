@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classes from './Season.module.css';
+import { withAuthorization } from '../../components/Session';
 
 class Season extends Component {
   render() {
@@ -11,4 +12,6 @@ class Season extends Component {
   }
 }
 
-export default Season;
+const condition = authUser => !!authUser;
+
+export default withAuthorization(condition)(Season);

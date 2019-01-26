@@ -1,12 +1,19 @@
 import React from 'react';
 import classes from './Account.module.css';
+import { AuthUserContext, withAuthorization } from '../../components/Session';
 
-const account = () => {
+const Account = () => {
   return (
-    <div className={classes.Account}>
-      <h1>My Account</h1>
-    </div>
+    <AuthUserContext.Consumer>
+      {authUser => (
+        <div className={classes.Account}>
+          <h1>{authUser.email}</h1>
+        </div>
+      )}
+    </AuthUserContext.Consumer>
   );
 };
 
-export default account;
+const condition = authUser => !!authUser;
+
+export default withAuthorization(condition)(Account);

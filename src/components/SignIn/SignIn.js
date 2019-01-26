@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './SignIn.module.css';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
+import { withAuthorization } from '../Session';
 import SignInForm from './SignInForm/SignInForm';
 
 const signIn = () => {
@@ -19,4 +20,6 @@ const signIn = () => {
   );
 };
 
-export default signIn;
+const condition = authUser => !authUser;
+
+export default withAuthorization(condition)(signIn);
