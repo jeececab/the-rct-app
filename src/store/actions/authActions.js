@@ -24,7 +24,10 @@ export const signIn = (email, password) => dispatch => {
       console.log(result.user.uid);
     })
     .catch(error => {
-      console.log(error);
+      dispatch({
+        type: actionTypes.AUTH_FAIL,
+        error: error
+      });
     });
 };
 
@@ -40,7 +43,10 @@ export const signUp = (email, password) => dispatch => {
       }); */
     })
     .catch(error => {
-      console.log(error);
+      dispatch({
+        type: actionTypes.AUTH_FAIL,
+        error: error
+      });
     });
 };
 
@@ -60,6 +66,9 @@ export const passwordForget = email => dispatch => {
     .sendPasswordResetEmail(email)
     .then(() => {})
     .catch(error => {
-      console.log(error);
+      dispatch({
+        type: actionTypes.AUTH_FAIL,
+        error: error
+      });
     });
 };

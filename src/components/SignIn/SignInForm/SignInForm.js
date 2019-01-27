@@ -9,7 +9,6 @@ import Button from '../../UI/Button/Button';
 const INITIAL_STATE = {
   email: '',
   password: '',
-  error: null
 };
 
 class SignInForm extends Component {
@@ -28,7 +27,7 @@ class SignInForm extends Component {
   handleSubmit = event => {
     const { signIn } = this.props;
     const { email, password } = this.state;
-    signIn(email, password)
+    signIn(email, password);
     event.preventDefault();
   };
 
@@ -37,7 +36,8 @@ class SignInForm extends Component {
   };
 
   render() {
-    const { email, password, error } = this.state;
+    const { email, password } = this.state;
+    const { error } = this.props;
 
     const isInvalid = password === '' || email === '';
 
@@ -69,7 +69,10 @@ class SignInForm extends Component {
 }
 
 function mapStateToProps(state) {
-  return { auth: state.auth.data };
+  return { auth: state.auth.data, error: state.auth.error };
 }
 
-export default connect(mapStateToProps, { signIn })(SignInForm);
+export default connect(
+  mapStateToProps,
+  { signIn }
+)(SignInForm);

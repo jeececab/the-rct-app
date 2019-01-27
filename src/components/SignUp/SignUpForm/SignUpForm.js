@@ -40,13 +40,13 @@ class SignUpForm extends Component {
   };
 
   render() {
+    const { error } = this.props
     const {
       username,
       email,
       emailTwo,
       password,
-      passwordTwo,
-      error
+      passwordTwo
     } = this.state;
 
     const isInvalid =
@@ -104,7 +104,7 @@ class SignUpForm extends Component {
 }
 
 function mapStateToProps(state) {
-  return { auth: state.auth.data };
+  return { auth: state.auth.data, error: state.auth.error };
 }
 
 export default connect(

@@ -11,8 +11,14 @@ export default (state = INITIAL_STATE, action) => {
     case actionTypes.FETCH_USER:
       return {
         ...state,
-        data: action.data || null
+        data: action.data || null,
+        error: null
       };
+    case actionTypes.AUTH_FAIL:
+      return {
+        ...state,
+        error: action.error
+      }
     default:
       return state;
   }

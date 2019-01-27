@@ -7,8 +7,7 @@ import * as ROUTES from '../../../constants/routes';
 import Button from '../../UI/Button/Button';
 
 const INITIAL_STATE = {
-  email: '',
-  error: null,
+  email: ''
 };
 
 class PasswordForgetForm extends Component {
@@ -25,9 +24,9 @@ class PasswordForgetForm extends Component {
   }
 
   handleSubmit = event => {
-    const { passwordForget } = this.props
+    const { passwordForget } = this.props;
     const { email } = this.state;
-    passwordForget(email)
+    passwordForget(email);
     event.preventDefault();
   };
 
@@ -36,7 +35,8 @@ class PasswordForgetForm extends Component {
   };
 
   render() {
-    const { email, error } = this.state;
+    const { error } = this.props;
+    const { email } = this.state;
 
     const isInvalid = email === '';
 
@@ -60,7 +60,10 @@ class PasswordForgetForm extends Component {
 }
 
 function mapStateToProps(state) {
-  return { auth: state.auth.data };
+  return { auth: state.auth.data, error: state.auth.error };
 }
 
-export default connect(mapStateToProps, { passwordForget })(PasswordForgetForm);
+export default connect(
+  mapStateToProps,
+  { passwordForget }
+)(PasswordForgetForm);

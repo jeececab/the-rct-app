@@ -6,7 +6,9 @@ import SignOutButton from '../../SignOutButton/SignOutButton';
 
 const navigationItems = () => (
   <ul className={classes.NavigationItems}>
-    <NavigationItem link={ROUTES.ACCOUNT} exact>My Account</NavigationItem>
+    <NavigationItem link={ROUTES.ACCOUNT} exact>
+      My Account
+    </NavigationItem>
     <NavigationItem link={ROUTES.SEASON}>Season</NavigationItem>
     <SignOutButton />
   </ul>

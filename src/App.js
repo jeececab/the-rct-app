@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import * as ROUTES from './constants/routes';
-import requireAuth from './components/Auth/requireAuth';
 import Navigation from './components/Navigation/Navigation';
 import Landing from './components/Landing/Landing';
 import SignUp from './components/SignUp/SignUp';
@@ -20,37 +19,47 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <BrowserRouter>
+    const { auth } = this.props;
+
+    let routes = (
+      <React.Fragment>
+        <Switch>
+          <Route path={ROUTES.SIGN_IN} component={SignIn} />
+          <Route path={ROUTES.SIGN_UP} component={SignUp} />
+          <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForget} />
+          <Route exact path="/" component={Landing} />
+          <Redirect to="/" />
+        </Switch>
+      </React.Fragment>
+    );
+
+    if (auth) {
+      routes = (
         <React.Fragment>
           <Switch>
             <Navigation />
           </Switch>
-          <Route exact path="/" component={requireAuth(Landing, 'nonAuth')} />
-          <Route
-            exact
-            path={ROUTES.SIGN_IN}
-            component={requireAuth(SignIn, 'nonAuth')}
-          />
-          <Route
-            exact
-            path={ROUTES.SIGN_UP}
-            component={requireAuth(SignUp, 'nonAuth')}
-          />
-          <Route
-            exact
-            path={ROUTES.PASSWORD_FORGET}
-            component={requireAuth(PasswordForget, 'nonAuth')}
-          />
-          <Route exact path={ROUTES.ACCOUNT} component={requireAuth(Account)} />
-          <Route exact path={ROUTES.SEASON} component={requireAuth(Season)} />
+
+          <Switch>
+            <Route path={ROUTES.ACCOUNT} component={Account} />
+            <Route path={ROUTES.SEASON} component={Season} />
+            <Redirect to={ROUTES.ACCOUNT} />
+          </Switch>
         </React.Fragment>
-      </BrowserRouter>
-    );
+      );
+    }
+
+    return <BrowserRouter>{routes}</BrowserRouter>;
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    auth: state.auth.data
+  };
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   { fetchUser }
 )(App);
