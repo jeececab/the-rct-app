@@ -1,6 +1,11 @@
-export const FETCH_DAYS = 'FETCH_DAYS';
-
 export const FETCH_USER = 'FETCH_USER';
-export const AUTH_START = 'AUTH_START';
-export const AUTH_SUCCESS = 'AUTH_SUCCESS';
-export const AUTH_FAIL = 'AUTH_FAIL';
+
+export const REQUEST_START = 'REQUEST_START';
+export const REQUEST_SUCCESS = 'REQUEST_SUCCESS';
+export const REQUEST_FAIL = 'REQUEST_FAIL';
+export const CLEAR_ERROR = 'CLEAR_ERROR'
+
+export const FETCH_SEASON = 'FETCH_SEASON'
+
+
+//export const FETCH_DAYS = 'FETCH_DAYS';

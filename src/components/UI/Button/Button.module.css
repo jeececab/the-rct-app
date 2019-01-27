@@ -60,3 +60,14 @@
 .Secondary-small:hover {
   background: var(--accent-darken);
 }
+
+.Link {
+  color: var(--font-accent-darken);
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.Link:hover {
+  color: var(--accent);
+}

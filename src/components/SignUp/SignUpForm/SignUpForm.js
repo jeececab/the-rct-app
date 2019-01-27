@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classes from './SignUpForm.module.css';
 import { connect } from 'react-redux';
-import { signUp, fetchUser } from '../../../store/actions';
+import { signUp, clearError } from '../../../store/actions';
 import PropTypes from 'prop-types';
 import * as ROUTES from '../../../constants/routes';
 import Button from '../../UI/Button/Button';
@@ -30,7 +30,7 @@ class SignUpForm extends Component {
   }
 
   componentWillUnmount() {
-    this.props.fetchUser();
+    this.props.clearError();
   }
 
   handleSubmit = event => {
@@ -62,7 +62,7 @@ class SignUpForm extends Component {
           value={username}
           onChange={this.onChange}
           type="text"
-          placeholder="Full Name"
+          placeholder="User Name"
         />
         <input
           name="email"
@@ -114,12 +114,12 @@ class SignUpForm extends Component {
 function mapStateToProps(state) {
   return {
     authUser: state.auth.authUser,
-    error: state.auth.error,
-    isLoading: state.auth.loading
+    error: state.request.error,
+    isLoading: state.request.loading
   };
 }
 
 export default connect(
   mapStateToProps,
-  { signUp, fetchUser }
+  { signUp, clearError }
 )(SignUpForm);

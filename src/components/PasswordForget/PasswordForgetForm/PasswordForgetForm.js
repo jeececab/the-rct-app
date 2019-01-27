@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classes from './PasswordForgetForm.module.css';
 import { connect } from 'react-redux';
-import { resetPassword } from '../../../store/actions';
+import { resetPassword, clearError } from '../../../store/actions';
 import PropTypes from 'prop-types';
 import * as ROUTES from '../../../constants/routes';
 import Button from '../../UI/Button/Button';
@@ -22,6 +22,10 @@ class PasswordForgetForm extends Component {
     if (nextProps.pwResetSent) {
       this.context.router.history.push(ROUTES.SIGN_IN);
     }
+  }
+
+  componentWillUnmount() {
+    clearError();
   }
 
   handleSubmit = event => {
@@ -71,14 +75,14 @@ class PasswordForgetForm extends Component {
 
 function mapStateToProps(state) {
   return {
-    authUser: state.auth.authUser,
-    error: state.auth.error,
-    isLoading: state.auth.loading,
+    authUser: state.request.authUser,
+    error: state.request.error,
+    isLoading: state.request.loading,
     pwResetSent: state.auth.pwResetSent
   };
 }
 
 export default connect(
   mapStateToProps,
-  { resetPassword }
+  { resetPassword, clearError }
 )(PasswordForgetForm);

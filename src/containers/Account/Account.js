@@ -5,6 +5,11 @@ const Account = () => {
   return (
     <div className={classes.Account}>
       <h1>My Account</h1>
+      <h3>Start new season</h3>
+      <h3>Check past seasons</h3>
+      <h3>Change email</h3>
+      <h3>Change password</h3>
+      <h3>Change username</h3>
     </div>
   );
 };

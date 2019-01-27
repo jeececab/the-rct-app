@@ -6,4 +6,6 @@ export {
   resetPassword
 } from './authActions';
 
-export { addDay, deleteDay, fetchDays } from './seasonActions';
+export { clearError } from './requestActions';
+
+export { fetchSeason } from './seasonActions';

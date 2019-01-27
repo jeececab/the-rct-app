@@ -1,9 +1,16 @@
 import * as actionTypes from '../actions/actionTypes';
 
-export default (state = {}, action) => {
+const INITIAL_STATE = {
+  ongoingSeason: null
+}
+
+export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case actionTypes.FETCH_DAYS:
-      return action.payload;
+    case actionTypes.FETCH_SEASON:
+      return {
+        ...state,
+        ongoingSeason: action.ongoingSeason
+      };
     default:
       return state;
   }

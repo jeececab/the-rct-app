@@ -1,5 +1,6 @@
 import { authRef, db } from '../../config/firebase';
 import * as actionTypes from './actionTypes';
+import * as actions from './requestActions'
 
 export const fetchUser = () => dispatch => {
   authRef.onAuthStateChanged(user => {
@@ -17,40 +18,21 @@ export const fetchUser = () => dispatch => {
   });
 };
 
-export const authStart = () => {
-  return {
-    type: actionTypes.AUTH_START
-  };
-};
-
-export const authSuccess = () => {
-  return {
-    type: actionTypes.AUTH_SUCCESS
-  };
-};
-
-export const authFail = error => {
-  return {
-    type: actionTypes.AUTH_FAIL,
-    error: error
-  };
-};
-
 export const signIn = (email, password) => dispatch => {
-  dispatch(authStart());
+  dispatch(actions.requestStart());
 
   authRef
     .signInWithEmailAndPassword(email, password)
     .then(() => {
-      dispatch(authSuccess());
+      dispatch(actions.requestSuccess());
     })
     .catch(error => {
-      dispatch(authFail(error));
+      dispatch(actions.requestFail(error));
     });
 };
 
 export const signUp = (email, password, username) => dispatch => {
-  dispatch(authStart());
+  dispatch(actions.requestStart());
 
   authRef
     .createUserWithEmailAndPassword(email, password)
@@ -62,32 +44,32 @@ export const signUp = (email, password, username) => dispatch => {
       });
     })
     .catch(error => {
-      dispatch(authFail(error));
+      dispatch(actions.requestFail(error));
     });
 };
 
 export const resetPassword = email => dispatch => {
-  dispatch(authStart());
+  dispatch(actions.requestStart());
 
   authRef
     .sendPasswordResetEmail(email)
     .then(() => {
-      dispatch(authSuccess());
+      dispatch(actions.requestSuccess());
     })
     .catch(error => {
-      dispatch(authFail(error));
+      dispatch(actions.requestFail(error));
     });
 };
 
 export const signOut = () => dispatch => {
-  dispatch(authStart());
+  dispatch(actions.requestStart());
 
   authRef
     .signOut()
     .then(() => {
-      dispatch(authSuccess());
+      dispatch(actions.requestSuccess());
     })
     .catch(error => {
-      dispatch(authFail(error));
+      dispatch(actions.requestFail(error));
     });
 };
