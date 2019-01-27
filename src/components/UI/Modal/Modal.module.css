@@ -2,19 +2,24 @@
   position: fixed;
   z-index: 500;
   background-color: var(--background);
-  width: 70%;
-  border: 1px solid #ccc;
-  box-shadow: 1px 1px 1px #ccc;
+  width: 94%;
+  border: 1px solid var(--gray);
   padding: 16px;
-  left: 15%;
-  top: 5%;
+  left: 3%;
+  top: 0.7em;
   box-sizing: border-box;
-  transition: all 0.5s ease-out;
+  transition: transform 0.5s ease-out;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 608px) {
   .Modal {
-      width: 500px;
-      left: calc(50% - 250px);
+    top: 3.5em;
+  }
+}
+
+@media (min-width: 740px) {
+  .Modal {
+      width: 700px;
+      left: calc(50% - 350px);
   }
 }

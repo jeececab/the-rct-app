@@ -1,0 +1,32 @@
+{
+  "trainingDays": [
+    {
+      "id": "day-1",
+      "phase": "base"
+    },
+    {
+      "id": "day-2",
+      "phase":"strength"
+    },
+    {
+      "id": "day-3",
+      "phase":"power"
+    },
+    {
+      "id": "day-4",
+      "phase":"endur"
+    },
+    {
+      "id": "day-5",
+      "phase":"endur"
+    },
+    {
+      "id": "day-6",
+      "phase":"perf"
+    },
+    {
+      "id": "day-7",
+      "phase":"rest"
+    }
+  ]
+}

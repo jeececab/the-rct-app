@@ -1,0 +1,16 @@
+.NewSeason {
+  border: none;
+}
+
+.NewSeason h3 {
+  margin-bottom: 0.2em;
+}
+
+.NewSeason button {
+  display: block;
+  margin: 0 auto; 
+}
+
+.NewSeason p {
+  font-size: 0.9375em;
+}
