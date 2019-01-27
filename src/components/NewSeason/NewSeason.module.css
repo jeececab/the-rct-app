@@ -14,3 +14,12 @@
 .NewSeason p {
   font-size: 0.9375em;
 }
+
+.DatePicker {
+  margin: 1em 0;
+}
+
+.DatePicker input {
+  text-align: center;
+  width: 8em;
+}

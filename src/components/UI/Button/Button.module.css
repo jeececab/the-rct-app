@@ -29,10 +29,6 @@
   background: var(--accent-darken);
 }
 
-.Primary:disabled {
-  cursor: not-allowed;
-}
-
 .Secondary {
   background: transparent;
   border: 0.095em solid var(--accent);
@@ -70,4 +66,10 @@
 
 .Link:hover {
   color: var(--accent);
+}
+
+.Primary:disabled,
+.Secondary:disabled,
+.Link:disabled {
+  cursor: not-allowed;
 }

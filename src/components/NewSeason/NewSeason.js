@@ -1,21 +1,31 @@
 import React, { Component } from 'react';
 import classes from './NewSeason.module.css';
 import Button from '../../components/UI/Button/Button';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 class NewSeason extends Component {
   state = {
     step: 'trainingPlan',
     trainingPlan: null,
-    startingDate: null
+    startDate: null
   };
 
   trainingPlanHandler = event => {
     const trainingPlan = event.target.innerHTML.toLowerCase();
     this.setState({
       trainingPlan: trainingPlan,
-      step: 'startingDate'
+      step: 'startDate'
     });
   };
+
+  dateChangeHandler = date => {
+    this.setState({
+      startDate: date
+    });
+  };
+
+  dateConfirmHandler = () => {};
 
   render() {
     let step = (
@@ -44,10 +54,25 @@ class NewSeason extends Component {
       </React.Fragment>
     );
 
-    if (this.state.step === 'startingDate') {
+    const isInvalid = this.state.startDate === null;
+
+    if (this.state.step === 'startDate') {
       step = (
         <React.Fragment>
           <h3>Step 2 - Choose a starting date</h3>
+          <div className={classes.DatePicker}>
+            <DatePicker
+              selected={this.state.startDate}
+              onChange={this.dateChangeHandler}
+            />
+          </div>
+          <Button
+            btnType="Link"
+            clicked={this.dateConfirmHandler}
+            disabled={isInvalid}
+          >
+            Continue
+          </Button>
         </React.Fragment>
       );
     }
