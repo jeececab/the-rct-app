@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import classes from './SignInForm.module.css';
 import { connect } from 'react-redux';
-import { signIn } from '../../../store/actions';
+import { signIn, fetchUser } from '../../../store/actions';
 import PropTypes from 'prop-types';
 import * as ROUTES from '../../../constants/routes';
 import Button from '../../UI/Button/Button';
+import Spinner from '../../UI/Spinner/Spinner';
 
 const INITIAL_STATE = {
   email: '',
-  password: '',
+  password: ''
 };
 
 class SignInForm extends Component {
@@ -19,9 +20,13 @@ class SignInForm extends Component {
   };
 
   componentWillUpdate(nextProps) {
-    if (nextProps.auth) {
+    if (nextProps.authUser) {
       this.context.router.history.push(ROUTES.ACCOUNT);
     }
+  }
+
+  componentWillUnmount() {
+    this.props.fetchUser();
   }
 
   handleSubmit = event => {
@@ -37,11 +42,11 @@ class SignInForm extends Component {
 
   render() {
     const { email, password } = this.state;
-    const { error } = this.props;
+    const { error, isLoading } = this.props;
 
     const isInvalid = password === '' || email === '';
 
-    return (
+    let form = (
       <form onSubmit={this.handleSubmit} className={classes.SignInForm}>
         <input
           name="email"
@@ -61,18 +66,31 @@ class SignInForm extends Component {
         <Button btnType="Primary" type="submit" disabled={isInvalid}>
           Sign In
         </Button>
-
-        {error && <p>{error.message}</p>}
       </form>
+    );
+
+    if (isLoading) {
+      form = <Spinner />;
+    }
+
+    return (
+      <React.Fragment>
+        {form}
+        {error && <p>{error.message}</p>}
+      </React.Fragment>
     );
   }
 }
 
 function mapStateToProps(state) {
-  return { auth: state.auth.data, error: state.auth.error };
+  return {
+    authUser: state.auth.authUser,
+    error: state.auth.error,
+    isLoading: state.auth.loading
+  };
 }
 
 export default connect(
   mapStateToProps,
-  { signIn }
+  { signIn, fetchUser }
 )(SignInForm);

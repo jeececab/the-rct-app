@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import classes from './PasswordForgetForm.module.css';
 import { connect } from 'react-redux';
-import { passwordForget } from '../../../store/actions';
+import { resetPassword } from '../../../store/actions';
 import PropTypes from 'prop-types';
 import * as ROUTES from '../../../constants/routes';
 import Button from '../../UI/Button/Button';
+import Spinner from '../../UI/Spinner/Spinner';
 
 const INITIAL_STATE = {
   email: ''
@@ -18,15 +19,15 @@ class PasswordForgetForm extends Component {
   };
 
   componentWillUpdate(nextProps) {
-    if (nextProps.auth) {
+    if (nextProps.authUser) {
       this.context.router.history.push(ROUTES.SIGN_IN);
     }
   }
 
   handleSubmit = event => {
-    const { passwordForget } = this.props;
+    const { resetPassword } = this.props;
     const { email } = this.state;
-    passwordForget(email);
+    resetPassword(email);
     event.preventDefault();
   };
 
@@ -35,12 +36,12 @@ class PasswordForgetForm extends Component {
   };
 
   render() {
-    const { error } = this.props;
+    const { error, isLoading } = this.props;
     const { email } = this.state;
 
     const isInvalid = email === '';
 
-    return (
+    let form = (
       <form className={classes.PasswordForgetForm} onSubmit={this.handleSubmit}>
         <input
           name="email"
@@ -52,18 +53,31 @@ class PasswordForgetForm extends Component {
         <Button btnType="Primary" disabled={isInvalid} type="submit">
           Send
         </Button>
-
-        {error && <p>{error.message}</p>}
       </form>
+    );
+
+    if (isLoading) {
+      form = <Spinner />;
+    }
+
+    return (
+      <React.Fragment>
+        {form}
+        {error && <p>{error.message}</p>}
+      </React.Fragment>
     );
   }
 }
 
 function mapStateToProps(state) {
-  return { auth: state.auth.data, error: state.auth.error };
+  return {
+    authUser: state.auth.authUser,
+    error: state.auth.error,
+    isLoading: state.auth.loading
+  };
 }
 
 export default connect(
   mapStateToProps,
-  { passwordForget }
+  { resetPassword }
 )(PasswordForgetForm);

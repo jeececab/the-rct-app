@@ -3,7 +3,7 @@ export {
   signIn,
   signUp,
   signOut,
-  passwordForget
+  resetPassword
 } from './authActions';
 
 export { addDay, deleteDay, fetchDays } from './seasonActions';

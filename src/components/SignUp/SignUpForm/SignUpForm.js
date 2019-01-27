@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import classes from './SignUpForm.module.css';
 import { connect } from 'react-redux';
-import { signUp } from '../../../store/actions';
+import { signUp, fetchUser } from '../../../store/actions';
 import PropTypes from 'prop-types';
 import * as ROUTES from '../../../constants/routes';
 import Button from '../../UI/Button/Button';
+import Spinner from '../../UI/Spinner/Spinner';
 
 const INITIAL_STATE = {
   username: '',
@@ -23,9 +24,13 @@ class SignUpForm extends Component {
   };
 
   componentWillUpdate(nextProps) {
-    if (nextProps.auth) {
+    if (nextProps.authUser) {
       this.context.router.history.push(ROUTES.ACCOUNT);
     }
+  }
+
+  componentWillUnmount() {
+    this.props.fetchUser();
   }
 
   handleSubmit = event => {
@@ -40,14 +45,8 @@ class SignUpForm extends Component {
   };
 
   render() {
-    const { error } = this.props
-    const {
-      username,
-      email,
-      emailTwo,
-      password,
-      passwordTwo
-    } = this.state;
+    const { username, email, emailTwo, password, passwordTwo } = this.state;
+    const { error, isLoading } = this.props;
 
     const isInvalid =
       password !== passwordTwo ||
@@ -56,7 +55,7 @@ class SignUpForm extends Component {
       email === '' ||
       username === '';
 
-    return (
+    let form = (
       <form onSubmit={this.handleSubmit} className={classes.SignUpForm}>
         <input
           name="username"
@@ -96,18 +95,31 @@ class SignUpForm extends Component {
         <Button btnType="Primary" type="submit" disabled={isInvalid}>
           Sign Up
         </Button>
-
-        {error && <p>{error.message}</p>}
       </form>
+    );
+
+    if (isLoading) {
+      form = <Spinner />;
+    }
+
+    return (
+      <React.Fragment>
+        {form}
+        {error && <p>{error.message}</p>}
+      </React.Fragment>
     );
   }
 }
 
 function mapStateToProps(state) {
-  return { auth: state.auth.data, error: state.auth.error };
+  return {
+    authUser: state.auth.authUser,
+    error: state.auth.error,
+    isLoading: state.auth.loading
+  };
 }
 
 export default connect(
   mapStateToProps,
-  { signUp }
+  { signUp, fetchUser }
 )(SignUpForm);

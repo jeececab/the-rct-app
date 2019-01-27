@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   render() {
-    const { auth } = this.props;
+    const { authUser } = this.props;
 
     let routes = (
       <React.Fragment>
@@ -33,7 +33,7 @@ class App extends Component {
       </React.Fragment>
     );
 
-    if (auth) {
+    if (authUser) {
       routes = (
         <React.Fragment>
           <Switch>
@@ -55,7 +55,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    auth: state.auth.data
+    authUser: state.auth.authUser
   };
 };
 

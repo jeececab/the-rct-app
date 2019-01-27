@@ -1,9 +1,9 @@
 import * as actionTypes from "../actions/actionTypes";
 
 const INITIAL_STATE = {
-  data: false,
-  loading: false,
-  error: null
+  authUser: false,
+  error: null,
+  loading: false
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -11,13 +11,26 @@ export default (state = INITIAL_STATE, action) => {
     case actionTypes.FETCH_USER:
       return {
         ...state,
-        data: action.data || null,
+        authUser: action.authUser || null,
         error: null
       };
+    case actionTypes.AUTH_START:
+      return {
+        ...state,
+        error: null,
+        loading: true
+      }
+    case actionTypes.AUTH_SUCCESS:
+      return {
+        ...state,
+        error: null,
+        loading: false
+      }
     case actionTypes.AUTH_FAIL:
       return {
         ...state,
-        error: action.error
+        error: action.error,
+        loading: false
       }
     default:
       return state;

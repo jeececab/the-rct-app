@@ -6,32 +6,52 @@ export const fetchUser = () => dispatch => {
     if (user) {
       dispatch({
         type: actionTypes.FETCH_USER,
-        data: user
+        authUser: user
       });
     } else {
       dispatch({
         type: actionTypes.FETCH_USER,
-        data: null
+        authUser: null
       });
     }
   });
 };
 
+export const authStart = () => {
+  return {
+    type: actionTypes.AUTH_START
+  };
+};
+
+export const authSuccess = () => {
+  return {
+    type: actionTypes.AUTH_SUCCESS
+  };
+};
+
+export const authFail = error => {
+  return {
+    type: actionTypes.AUTH_FAIL,
+    error: error
+  };
+};
+
 export const signIn = (email, password) => dispatch => {
+  dispatch(authStart());
+
   authRef
     .signInWithEmailAndPassword(email, password)
-    .then(result => {
-      console.log(result.user.uid);
+    .then(() => {
+      dispatch(authSuccess());
     })
     .catch(error => {
-      dispatch({
-        type: actionTypes.AUTH_FAIL,
-        error: error
-      });
+      dispatch(authFail(error));
     });
 };
 
 export const signUp = (email, password, username) => dispatch => {
+  dispatch(authStart());
+
   authRef
     .createUserWithEmailAndPassword(email, password)
     .then(result => {
@@ -42,32 +62,32 @@ export const signUp = (email, password, username) => dispatch => {
       });
     })
     .catch(error => {
-      dispatch({
-        type: actionTypes.AUTH_FAIL,
-        error: error
-      });
+      dispatch(authFail(error));
+    });
+};
+
+export const resetPassword = email => dispatch => {
+  dispatch(authStart());
+
+  authRef
+    .sendPasswordResetEmail(email)
+    .then(() => {
+      dispatch(authSuccess());
+    })
+    .catch(error => {
+      dispatch(authFail(error));
     });
 };
 
 export const signOut = () => dispatch => {
+  dispatch(authStart());
+
   authRef
     .signOut()
     .then(() => {
-      // Sign-out successful.
+      dispatch(authSuccess());
     })
     .catch(error => {
-      console.log(error);
-    });
-};
-
-export const passwordForget = email => dispatch => {
-  authRef
-    .sendPasswordResetEmail(email)
-    .then(() => {})
-    .catch(error => {
-      dispatch({
-        type: actionTypes.AUTH_FAIL,
-        error: error
-      });
+      dispatch(authFail(error));
     });
 };
