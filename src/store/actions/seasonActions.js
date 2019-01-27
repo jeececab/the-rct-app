@@ -1,4 +1,4 @@
-import { daysRef } from '../../config/firebase';
+/* import { daysRef } from '../../config/firebase';
 import * as actionTypes from './actionTypes';
 
 export const addDay = newDay => async () => {
@@ -16,4 +16,4 @@ export const fetchDays = () => async dispatch => {
       payload: snapshot.val()
     });
   });
-};
+}; */

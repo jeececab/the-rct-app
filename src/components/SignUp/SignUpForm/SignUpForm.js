@@ -30,8 +30,8 @@ class SignUpForm extends Component {
 
   handleSubmit = event => {
     const { signUp } = this.props;
-    const { email, password } = this.state;
-    signUp(email, password);
+    const { email, password, username } = this.state;
+    signUp(email, password, username);
     event.preventDefault();
   };
 

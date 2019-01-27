@@ -1,5 +1,20 @@
 import React, { Component } from 'react';
 import classes from './Season.module.css';
+
+class Season extends Component {
+  render() {
+    return (
+      <div className={classes.Season}>
+        <h1>Season</h1>
+      </div>
+    );
+  }
+}
+
+export default Season;
+
+/* import React, { Component } from 'react';
+import classes from './Season.module.css';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import * as actions from '../../store/actions';
@@ -40,4 +55,4 @@ const mapStateToProps = ({ season }) => {
   };
 };
 
-export default connect(mapStateToProps, actions)(Season);
+export default connect(mapStateToProps, actions)(Season); */

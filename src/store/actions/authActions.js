@@ -1,4 +1,4 @@
-import { authRef } from '../../config/firebase';
+import { authRef, db } from '../../config/firebase';
 import * as actionTypes from './actionTypes';
 
 export const fetchUser = () => dispatch => {
@@ -31,16 +31,15 @@ export const signIn = (email, password) => dispatch => {
     });
 };
 
-export const signUp = (email, password) => dispatch => {
+export const signUp = (email, password, username) => dispatch => {
   authRef
     .createUserWithEmailAndPassword(email, password)
     .then(result => {
-      console.log(result.user.uid);
       // Create a user in your Firebase realtime database
-      /* return this.props.firebase.user(authUser.user.uid).set({
+      db.ref('users/' + result.user.uid).set({
         username,
         email
-      }); */
+      });
     })
     .catch(error => {
       dispatch({

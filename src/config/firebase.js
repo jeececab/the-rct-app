@@ -5,8 +5,5 @@ import 'firebase/database'
 import { FirebaseConfig } from "./keys";
 firebase.initializeApp(FirebaseConfig);
 
-const databaseRef = firebase.database().ref();
-
-
-export const daysRef = databaseRef.child("season/days");
+export const db = firebase.database()
 export const authRef = firebase.auth();
