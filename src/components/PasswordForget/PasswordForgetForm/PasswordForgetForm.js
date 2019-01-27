@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import classes from './PasswordForgetForm.module.css';
-import { withFirebase } from '../../Firebase';
+import { connect } from 'react-redux';
+import { passwordForget } from '../../../store/actions';
+import PropTypes from 'prop-types';
+import * as ROUTES from '../../../constants/routes';
 import Button from '../../UI/Button/Button';
 
 const INITIAL_STATE = {
@@ -10,19 +13,21 @@ const INITIAL_STATE = {
 
 class PasswordForgetForm extends Component {
   state = { ...INITIAL_STATE };
-  
-  onSubmit = event => {
+
+  static contextTypes = {
+    router: PropTypes.object
+  };
+
+  componentWillUpdate(nextProps) {
+    if (nextProps.auth) {
+      this.context.router.history.push(ROUTES.SIGN_IN);
+    }
+  }
+
+  handleSubmit = event => {
+    const { passwordForget } = this.props
     const { email } = this.state;
-
-    this.props.firebase
-      .doPasswordReset(email)
-      .then(() => {
-        this.setState({ ...INITIAL_STATE });
-      })
-      .catch(error => {
-        this.setState({ error });
-      });
-
+    passwordForget(email)
     event.preventDefault();
   };
 
@@ -36,7 +41,7 @@ class PasswordForgetForm extends Component {
     const isInvalid = email === '';
 
     return (
-      <form className={classes.PasswordForgetForm} onSubmit={this.onSubmit}>
+      <form className={classes.PasswordForgetForm} onSubmit={this.handleSubmit}>
         <input
           name="email"
           value={this.state.email}
@@ -54,4 +59,8 @@ class PasswordForgetForm extends Component {
   }
 }
 
-export default withFirebase(PasswordForgetForm);
+function mapStateToProps(state) {
+  return { auth: state.auth.data };
+}
+
+export default connect(mapStateToProps, { passwordForget })(PasswordForgetForm);

@@ -31,7 +31,7 @@ class SignUpForm extends Component {
   handleSubmit = event => {
     const { signUp } = this.props;
     const { email, password } = this.state;
-    signUp(email, password)
+    signUp(email, password);
     event.preventDefault();
   };
 
@@ -103,9 +103,11 @@ class SignUpForm extends Component {
   }
 }
 
-function mapStateToProps({ auth }) {
-  return { auth };
+function mapStateToProps(state) {
+  return { auth: state.auth.data };
 }
 
-export default connect(mapStateToProps, { signUp })(SignUpForm);
-
+export default connect(
+  mapStateToProps,
+  { signUp }
+)(SignUpForm);

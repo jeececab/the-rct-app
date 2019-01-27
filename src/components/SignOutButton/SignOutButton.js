@@ -14,11 +14,7 @@ class SignOutButton extends Component {
   }
 }
 
-function mapStateToProps({ auth }) {
-  return { auth };
-}
-
 export default connect(
-  mapStateToProps,
+  null,
   { signOut }
 )(SignOutButton);

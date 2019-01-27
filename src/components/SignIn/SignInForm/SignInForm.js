@@ -68,8 +68,8 @@ class SignInForm extends Component {
   }
 }
 
-function mapStateToProps({ auth }) {
-  return { auth };
+function mapStateToProps(state) {
+  return { auth: state.auth.data };
 }
 
 export default connect(mapStateToProps, { signIn })(SignInForm);

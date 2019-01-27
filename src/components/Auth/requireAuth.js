@@ -36,7 +36,7 @@ export default function(ComposedComponent, nonAuth) {
   }
 
   function mapStateToProps(state) {
-    return { authenticated: state.auth };
+    return { authenticated: state.auth.data };
   }
 
   return connect(mapStateToProps)(Authentication);

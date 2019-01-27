@@ -8,6 +8,7 @@ import Navigation from './components/Navigation/Navigation';
 import Landing from './components/Landing/Landing';
 import SignUp from './components/SignUp/SignUp';
 import SignIn from './components/SignIn/SignIn';
+import PasswordForget from './components/PasswordForget/PasswordForget';
 import Account from './components/Account/Account';
 import Season from './containers/Season/Season';
 
@@ -35,6 +36,11 @@ class App extends Component {
             exact
             path={ROUTES.SIGN_UP}
             component={requireAuth(SignUp, 'nonAuth')}
+          />
+          <Route
+            exact
+            path={ROUTES.PASSWORD_FORGET}
+            component={requireAuth(PasswordForget, 'nonAuth')}
           />
           <Route exact path={ROUTES.ACCOUNT} component={requireAuth(Account)} />
           <Route exact path={ROUTES.SEASON} component={requireAuth(Season)} />
