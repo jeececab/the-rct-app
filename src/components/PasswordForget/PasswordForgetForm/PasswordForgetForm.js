@@ -78,7 +78,7 @@ function mapStateToProps(state) {
     authUser: state.request.authUser,
     error: state.request.error,
     isLoading: state.request.loading,
-    pwResetSent: state.auth.pwResetSent
+    pwResetSent: state.request.pwResetSent
   };
 }
 
