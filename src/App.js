@@ -8,7 +8,7 @@ import Landing from './components/Landing/Landing';
 import SignUp from './components/SignUp/SignUp';
 import SignIn from './components/SignIn/SignIn';
 import PasswordForget from './components/PasswordForget/PasswordForget';
-import Account from './components/Account/Account';
+import Account from './containers/Account/Account';
 import Season from './containers/Season/Season';
 
 import { fetchUser } from './store/actions';

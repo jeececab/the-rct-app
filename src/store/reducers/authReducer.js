@@ -3,7 +3,8 @@ import * as actionTypes from "../actions/actionTypes";
 const INITIAL_STATE = {
   authUser: false,
   error: null,
-  loading: false
+  loading: false,
+  pwResetSent: false
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -24,7 +25,8 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         error: null,
-        loading: false
+        loading: false,
+        pwResetSent: true
       }
     case actionTypes.AUTH_FAIL:
       return {

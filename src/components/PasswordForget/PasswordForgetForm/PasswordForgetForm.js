@@ -19,7 +19,7 @@ class PasswordForgetForm extends Component {
   };
 
   componentWillUpdate(nextProps) {
-    if (nextProps.authUser) {
+    if (nextProps.pwResetSent) {
       this.context.router.history.push(ROUTES.SIGN_IN);
     }
   }
@@ -73,7 +73,8 @@ function mapStateToProps(state) {
   return {
     authUser: state.auth.authUser,
     error: state.auth.error,
-    isLoading: state.auth.loading
+    isLoading: state.auth.loading,
+    pwResetSent: state.auth.pwResetSent
   };
 }
 
