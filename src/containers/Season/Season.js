@@ -5,23 +5,23 @@ import NewSeason from '../../components/NewSeason/NewSeason';
 import Modal from '../../components/UI/Modal/Modal';
 import Button from '../../components/UI/Button/Button';
 
-import { fetchSeason } from '../../store/actions';
+import {
+  fetchSeason,
+  startNewSeason,
+  abortNewSeason
+} from '../../store/actions';
 
 class Season extends Component {
-  state = {
-    startingNewSeason: false
-  };
-
   componentWillMount() {
     this.props.fetchSeason(this.props.userId);
   }
 
-  newSeasonClosedHandler = () => {
-    this.setState({ startingNewSeason: false });
+  startNewSeasonHandler = () => {
+    this.props.startNewSeason();
   };
 
-  newSeasonOpenHandler = () => {
-    this.setState({ startingNewSeason: true });
+  abortNewSeasonHandler = () => {
+    this.props.abortNewSeason();
   };
 
   render() {
@@ -30,7 +30,7 @@ class Season extends Component {
     let season = (
       <h3>
         No season yet?{' '}
-        <Button btnType="Link" clicked={this.newSeasonOpenHandler}>
+        <Button btnType="Link" clicked={this.startNewSeasonHandler}>
           Start a new season
         </Button>
       </h3>
@@ -45,8 +45,8 @@ class Season extends Component {
         <h1>Season</h1>
         {season}
         <Modal
-          show={this.state.startingNewSeason}
-          modalClosed={this.newSeasonClosedHandler}
+          show={this.props.startingNewSeason}
+          modalClosed={this.abortNewSeasonHandler}
         >
           <NewSeason />
         </Modal>
@@ -58,55 +58,12 @@ class Season extends Component {
 const mapStateToProps = state => {
   return {
     userId: state.auth.authUser.uid,
-    hasSeason: state.season.ongoingSeason
+    hasSeason: state.season.ongoingSeason,
+    startingNewSeason: state.newSeason.startingNewSeason
   };
 };
 
 export default connect(
   mapStateToProps,
-  { fetchSeason }
+  { fetchSeason, startNewSeason, abortNewSeason }
 )(Season);
-
-/* import React, { Component } from 'react';
-import classes from './Season.module.css';
-import { connect } from 'react-redux';
-import _ from 'lodash';
-import * as actions from '../../store/actions';
-import Day from '../../components/Day/Day';
-
-class Season extends Component {
-  componentWillMount() {
-    this.props.fetchDays();
-  }
-
-  handleAddDay = event => {
-    const { addDay } = this.props;
-    event.preventDefault();
-    addDay({ title: 'Day' });
-  };
-
-  render() {
-    const { season } = this.props;
-    
-    const days = _.map(season, (day, key) => {
-      return <Day key={key} dayId={key} title={day.title}/>
-    })
-
-    return (
-      <div className={classes.Season}>
-        <h1>Season</h1>
-        <button onClick={this.handleAddDay}>Add Day</button>
-        { days }
-      </div>
-    );
-  }
-}
-
-
-const mapStateToProps = ({ season }) => {
-  return {
-    season
-  };
-};
-
-export default connect(mapStateToProps, actions)(Season); */

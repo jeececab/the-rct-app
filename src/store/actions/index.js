@@ -1,3 +1,4 @@
+export { clearError } from './requestActions';
 export {
   fetchUser,
   signIn,
@@ -5,7 +6,10 @@ export {
   signOut,
   resetPassword
 } from './authActions';
-
-export { clearError } from './requestActions';
-
+export {
+  startNewSeason,
+  abortNewSeason,
+  setTrainingPlan,
+  setStartDate
+} from './newSeasonActions';
 export { fetchSeason } from './seasonActions';

@@ -5,7 +5,10 @@ export const REQUEST_SUCCESS = 'REQUEST_SUCCESS';
 export const REQUEST_FAIL = 'REQUEST_FAIL';
 export const CLEAR_ERROR = 'CLEAR_ERROR'
 
-export const FETCH_SEASON = 'FETCH_SEASON'
-
-
+export const FETCH_SEASON = 'FETCH_SEASON';
 //export const FETCH_DAYS = 'FETCH_DAYS';
+
+export const START_NEW_SEASON = 'START_NEWSEASON';
+export const ABORT_NEW_SEASON = 'ABORT_NEW_SEASON';
+export const SET_TRAINING_PLAN = 'SET_TRAINING_PLAN';
+export const SET_START_DATE = 'SET_STARTDATE';

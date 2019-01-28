@@ -1,50 +1,55 @@
 import React, { Component } from 'react';
 import classes from './NewSeason.module.css';
+import { connect } from 'react-redux';
+import { setTrainingPlan, setStartDate } from '../../store/actions';
 import Button from '../../components/UI/Button/Button';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 class NewSeason extends Component {
   state = {
-    step: 'trainingPlan',
-    trainingPlan: null,
-    startDate: null
+    changedDate: null
   };
 
-  trainingPlanHandler = event => {
+  componentWillMount() {
+    this.setState({
+      changedDate: null
+    })
+  }
+
+  choosePlanHandler = event => {
     const trainingPlan = event.target.innerHTML.toLowerCase();
+    this.props.setTrainingPlan(trainingPlan);
+  };
+
+  changeDateHandler = date => {
     this.setState({
-      trainingPlan: trainingPlan,
-      step: 'startDate'
+      changedDate: date
     });
   };
 
-  dateChangeHandler = date => {
-    this.setState({
-      startDate: date
-    });
+  confirmDateHandler = () => {
+    this.props.setStartDate(this.state.changedDate);
   };
-
-  dateConfirmHandler = () => {};
 
   render() {
     let step = (
       <React.Fragment>
         <h3>Step 1 - Choose a training plan</h3>
-        <Button btnType="Link" clicked={this.trainingPlanHandler}>
+        <Button btnType="Link" clicked={this.choosePlanHandler}>
           Novice
         </Button>
-        <Button btnType="Link" clicked={this.trainingPlanHandler}>
+        <Button btnType="Link" clicked={this.choosePlanHandler}>
           Experienced
         </Button>
-        <Button btnType="Link" clicked={this.trainingPlanHandler}>
+        <Button btnType="Link" clicked={this.choosePlanHandler}>
           Trad
         </Button>
-        <Button btnType="Link" clicked={this.trainingPlanHandler}>
+        <Button btnType="Link" clicked={this.choosePlanHandler}>
           Bouldering
         </Button>
         <h3>Or create your own</h3>
-        <Button btnType="Link" clicked={this.trainingPlanHandler}>
+        <Button btnType="Link" clicked={this.choosePlanHandler}>
           Blank template
         </Button>
         <p>
@@ -54,21 +59,21 @@ class NewSeason extends Component {
       </React.Fragment>
     );
 
-    const isInvalid = this.state.startDate === null;
+    const isInvalid = this.state.changedDate === null;
 
-    if (this.state.step === 'startDate') {
+    if (this.props.step === 'step2') {
       step = (
         <React.Fragment>
           <h3>Step 2 - Choose a starting date</h3>
           <div className={classes.DatePicker}>
             <DatePicker
-              selected={this.state.startDate}
-              onChange={this.dateChangeHandler}
+              selected={this.state.changedDate}
+              onChange={this.changeDateHandler}
             />
           </div>
           <Button
             btnType="Link"
-            clicked={this.dateConfirmHandler}
+            clicked={this.confirmDateHandler}
             disabled={isInvalid}
           >
             Continue
@@ -81,4 +86,16 @@ class NewSeason extends Component {
   }
 }
 
-export default NewSeason;
+const mapStateToProps = state => {
+  return {
+    step: state.newSeason.newSeasonStep,
+    startDate: state.newSeason.startDate,
+    startingNewSeason: state.newSeason.startingNewSeason,
+    trainingPlan: state.newSeason.trainingPlan
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { setTrainingPlan, setStartDate }
+)(NewSeason);
