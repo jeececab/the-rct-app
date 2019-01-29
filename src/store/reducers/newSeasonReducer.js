@@ -28,7 +28,8 @@ export default (state = INITIAL_STATE, action) => {
     case actionTypes.SET_START_DATE:
       return {
         ...state,
-        startDate: action.startDate
+        startDate: action.startDate,
+        newSeasonStep: 'step3'
       };
     default:
       return state;

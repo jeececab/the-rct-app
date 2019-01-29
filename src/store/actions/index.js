@@ -12,4 +12,4 @@ export {
   setTrainingPlan,
   setStartDate
 } from './newSeasonActions';
-export { fetchSeason } from './seasonActions';
+export { fetchSeason, fetchTrainingPlan } from './seasonActions';

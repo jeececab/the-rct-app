@@ -3,7 +3,7 @@ export const FETCH_USER = 'FETCH_USER';
 export const REQUEST_START = 'REQUEST_START';
 export const REQUEST_SUCCESS = 'REQUEST_SUCCESS';
 export const REQUEST_FAIL = 'REQUEST_FAIL';
-export const CLEAR_ERROR = 'CLEAR_ERROR'
+export const CLEAR_ERROR = 'CLEAR_ERROR';
 
 export const FETCH_SEASON = 'FETCH_SEASON';
 //export const FETCH_DAYS = 'FETCH_DAYS';
@@ -12,3 +12,4 @@ export const START_NEW_SEASON = 'START_NEWSEASON';
 export const ABORT_NEW_SEASON = 'ABORT_NEW_SEASON';
 export const SET_TRAINING_PLAN = 'SET_TRAINING_PLAN';
 export const SET_START_DATE = 'SET_STARTDATE';
+export const FETCH_TRAINING_PLAN = 'FETCH_TRAINING_PLAN';

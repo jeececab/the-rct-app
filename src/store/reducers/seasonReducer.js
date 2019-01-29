@@ -11,6 +11,11 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         ongoingSeason: action.ongoingSeason
       };
+    case actionTypes.FETCH_TRAINING_PLAN:
+    return {
+      ...state,
+      ongoingSeason: action.trainingPlan
+    }
     default:
       return state;
   }

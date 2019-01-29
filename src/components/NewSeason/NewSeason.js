@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import classes from './NewSeason.module.css';
 import { connect } from 'react-redux';
-import { setTrainingPlan, setStartDate } from '../../store/actions';
+import {
+  setTrainingPlan,
+  setStartDate,
+  fetchTrainingPlan
+} from '../../store/actions';
 import Button from '../../components/UI/Button/Button';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -14,7 +18,7 @@ class NewSeason extends Component {
   componentWillMount() {
     this.setState({
       changedDate: null
-    })
+    });
   }
 
   choosePlanHandler = event => {
@@ -30,6 +34,10 @@ class NewSeason extends Component {
 
   confirmDateHandler = () => {
     this.props.setStartDate(this.state.changedDate);
+  };
+
+  confirmNewSeasonHandler = () => {
+    this.props.fetchTrainingPlan(this.props.trainingPlan);
   };
 
   render() {
@@ -82,6 +90,17 @@ class NewSeason extends Component {
       );
     }
 
+    if (this.props.step === 'step3') {
+      step = (
+        <React.Fragment>
+          <h3>Step 3 - Confirmation</h3>
+          <Button btnType="Link" clicked={this.confirmNewSeasonHandler}>
+            Confirm
+          </Button>
+        </React.Fragment>
+      );
+    }
+
     return <div className={classes.NewSeason}>{step}</div>;
   }
 }
@@ -97,5 +116,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { setTrainingPlan, setStartDate }
+  { setTrainingPlan, setStartDate, fetchTrainingPlan }
 )(NewSeason);
