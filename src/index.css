@@ -3,6 +3,8 @@
   --accent: rgb(9, 199, 142);
   --accent-darken: rgb(9, 199, 142, 0.6);
   --accent-darken2: rgb(9, 199, 142, 0.8);
+  --danger: #be3636;
+  --danger-darken: #c55a5a;
   --black: #091011;
   --blue: #003346;
   --white: #F7F7F7;
@@ -11,6 +13,8 @@
 
   --font-accent: var(--accent);
   --font-accent-darken: var(--accent-darken2);
+  --font-danger: var(--danger);
+  --font-danger-darken: var(--danger-darken);
   --font-dark: var(--background);
   --font-light: var(--white);
   --font-sec: var(--lightgray);

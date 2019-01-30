@@ -4,11 +4,12 @@ import { connect } from 'react-redux';
 import NewSeason from '../../components/NewSeason/NewSeason';
 import Modal from '../../components/UI/Modal/Modal';
 import Button from '../../components/UI/Button/Button';
-
+import Spinner from '../../components/UI/Spinner/Spinner';
 import {
   fetchSeason,
+  clearError,
   startNewSeason,
-  abortNewSeason
+  newSeasonStepBack
 } from '../../store/actions';
 
 class Season extends Component {
@@ -16,16 +17,20 @@ class Season extends Component {
     this.props.fetchSeason(this.props.userId);
   }
 
+  componentWillUnmount() {
+    this.props.clearError();
+  }
+
   startNewSeasonHandler = () => {
     this.props.startNewSeason();
   };
 
-  abortNewSeasonHandler = () => {
-    this.props.abortNewSeason();
+  newSeasonStepBackHandler = () => {
+    this.props.newSeasonStepBack(null);
   };
 
   render() {
-    const { hasSeason } = this.props;
+    const { hasSeason, error, isLoading } = this.props;
 
     let season = (
       <h3>
@@ -35,6 +40,14 @@ class Season extends Component {
         </Button>
       </h3>
     );
+
+    if (isLoading) {
+      season = <Spinner />;
+    }
+
+    if (error) {
+      season = error && <p>{error}</p>;
+    }
 
     if (hasSeason) {
       season = <h2>Todo: My ongoing season</h2>;
@@ -46,7 +59,7 @@ class Season extends Component {
         {season}
         <Modal
           show={this.props.startingNewSeason}
-          modalClosed={this.abortNewSeasonHandler}
+          modalClosed={this.newSeasonStepBackHandler}
         >
           <NewSeason />
         </Modal>
@@ -59,11 +72,13 @@ const mapStateToProps = state => {
   return {
     userId: state.auth.authUser.uid,
     hasSeason: state.season.ongoingSeason,
-    startingNewSeason: state.newSeason.startingNewSeason
+    startingNewSeason: state.newSeason.startingNewSeason,
+    error: state.request.error,
+    isLoading: state.request.loading
   };
 };
 
 export default connect(
   mapStateToProps,
-  { fetchSeason, startNewSeason, abortNewSeason }
+  { fetchSeason, clearError, startNewSeason, newSeasonStepBack }
 )(Season);

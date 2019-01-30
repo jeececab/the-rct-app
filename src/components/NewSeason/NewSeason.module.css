@@ -3,16 +3,16 @@
 }
 
 .NewSeason h3 {
-  margin-bottom: 0.2em;
-}
-
-.NewSeason button {
-  display: block;
-  margin: 0 auto; 
+  margin-bottom: 0.3em;
 }
 
 .NewSeason p {
   font-size: 0.9375em;
+}
+
+.NewSeason button {
+  display: block;
+  margin: 0 auto;
 }
 
 .DatePicker {
@@ -22,4 +22,16 @@
 .DatePicker input {
   text-align: center;
   width: 8em;
+}
+
+.Btns {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Btns button {
+  display: inline-block;
+  margin: 0 0.3em;
 }

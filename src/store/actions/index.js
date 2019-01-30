@@ -8,7 +8,7 @@ export {
 } from './authActions';
 export {
   startNewSeason,
-  abortNewSeason,
+  newSeasonStepBack,
   setTrainingPlan,
   setStartDate
 } from './newSeasonActions';

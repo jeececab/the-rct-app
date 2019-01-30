@@ -65,7 +65,18 @@
 }
 
 .Link:hover {
-  color: var(--accent);
+  color: var(--font-accent);
+}
+
+.Link-danger {
+  color: var(--font-danger-darken);
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.Link-danger:hover {
+  color: var(--font-danger);
 }
 
 .Primary:disabled,

@@ -6,9 +6,10 @@ export const startNewSeason = () => dispatch => {
   })
 }
 
-export const abortNewSeason = () => dispatch => {
+export const newSeasonStepBack = step => dispatch => {
   dispatch({
-    type: actionTypes.ABORT_NEW_SEASON
+    type: actionTypes.NEW_SEASON_STEP_BACK,
+    step: step
   })
 }
 

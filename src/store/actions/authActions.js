@@ -1,6 +1,6 @@
 import { authRef, db } from '../../config/firebase';
 import * as actionTypes from './actionTypes';
-import * as actions from './requestActions'
+import { requestStart, requestSuccess, requestFail } from './requestActions';
 
 export const fetchUser = () => dispatch => {
   authRef.onAuthStateChanged(user => {
@@ -19,57 +19,58 @@ export const fetchUser = () => dispatch => {
 };
 
 export const signIn = (email, password) => dispatch => {
-  dispatch(actions.requestStart());
+  dispatch(requestStart());
 
   authRef
     .signInWithEmailAndPassword(email, password)
     .then(() => {
-      dispatch(actions.requestSuccess());
+      dispatch(requestSuccess());
     })
     .catch(error => {
-      dispatch(actions.requestFail(error));
+      dispatch(requestFail(error));
     });
 };
 
 export const signUp = (email, password, username) => dispatch => {
-  dispatch(actions.requestStart());
+  dispatch(requestStart());
 
   authRef
     .createUserWithEmailAndPassword(email, password)
     .then(result => {
-      // Create a user in your Firebase realtime database
+      dispatch(requestSuccess());
       db.ref('users/' + result.user.uid).set({
         username,
-        email
+        email,
+        ongoingSeason: false
       });
     })
     .catch(error => {
-      dispatch(actions.requestFail(error));
+      dispatch(requestFail(error));
     });
 };
 
 export const resetPassword = email => dispatch => {
-  dispatch(actions.requestStart());
+  dispatch(requestStart());
 
   authRef
     .sendPasswordResetEmail(email)
     .then(() => {
-      dispatch(actions.requestSuccess());
+      dispatch(requestSuccess());
     })
     .catch(error => {
-      dispatch(actions.requestFail(error));
+      dispatch(requestFail(error));
     });
 };
 
 export const signOut = () => dispatch => {
-  dispatch(actions.requestStart());
+  dispatch(requestStart());
 
   authRef
     .signOut()
     .then(() => {
-      dispatch(actions.requestSuccess());
+      dispatch(requestSuccess());
     })
     .catch(error => {
-      dispatch(actions.requestFail(error));
+      dispatch(requestFail(error));
     });
 };

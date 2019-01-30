@@ -14,17 +14,26 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         startingNewSeason: true
       };
-    case actionTypes.ABORT_NEW_SEASON:
+    case actionTypes.NEW_SEASON_STEP_BACK:
+      let newState;
+      if (action.step === null) {
+        newState = { startingNewSeason: false, trainingPlan: null };
+      } else if (action.step === 'step1') {
+        newState = { trainingPlan: null, startDate: null };
+      } else if (action.step === 'step2') {
+        newState = { startDate: null };
+      }
       return {
         ...state,
-        ...INITIAL_STATE
+        ...newState,
+        newSeasonStep: action.step
       };
     case actionTypes.SET_TRAINING_PLAN:
       return {
         ...state,
         trainingPlan: action.trainingPlan,
         newSeasonStep: 'step2'
-      }
+      };
     case actionTypes.SET_START_DATE:
       return {
         ...state,
