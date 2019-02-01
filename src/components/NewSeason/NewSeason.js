@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import {
   setTrainingPlan,
   setStartDate,
-  fetchTrainingPlan,
-  newSeasonStepBack
+  newSeasonStepBack,
+  saveNewSeason
 } from '../../store/actions';
 import Button from '../../components/UI/Button/Button';
 import DatePicker from 'react-datepicker';
@@ -43,7 +43,11 @@ class NewSeason extends Component {
   };
 
   confirmNewSeasonHandler = () => {
-    this.props.fetchTrainingPlan(this.props.trainingPlan);
+    this.props.saveNewSeason(
+      this.props.trainingPlan,
+      this.props.startDate,
+      this.props.userId
+    );
   };
 
   render() {
@@ -112,11 +116,11 @@ class NewSeason extends Component {
       UIstep = (
         <React.Fragment>
           <h3>Step 3 - Confirmation</h3>
-          <p>
+          <h4>
             {trainingPlan.charAt(0).toUpperCase() + trainingPlan.slice(1)}{' '}
             training plan
-          </p>
-          <p>Starting on {date.toDateString()}</p>
+          </h4>
+          <h4>Starting on {date.toDateString()}</h4>
           <div className={classes.Btns}>
             <Button
               btnType="Link-danger"
@@ -140,11 +144,17 @@ const mapStateToProps = state => {
   return {
     step: state.newSeason.newSeasonStep,
     startDate: state.newSeason.startDate,
-    trainingPlan: state.newSeason.trainingPlan
+    trainingPlan: state.newSeason.trainingPlan,
+    userId: state.auth.authUser.uid
   };
 };
 
 export default connect(
   mapStateToProps,
-  { setTrainingPlan, setStartDate, fetchTrainingPlan, newSeasonStepBack }
+  {
+    setTrainingPlan,
+    setStartDate,
+    newSeasonStepBack,
+    saveNewSeason
+  }
 )(NewSeason);

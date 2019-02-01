@@ -43,13 +43,9 @@ class Season extends Component {
 
     if (isLoading) {
       season = <Spinner />;
-    }
-
-    if (error) {
+    } else if (error) {
       season = error && <p>{error}</p>;
-    }
-
-    if (hasSeason) {
+    } else if (hasSeason) {
       season = <h2>Todo: My ongoing season</h2>;
     }
 

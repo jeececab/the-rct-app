@@ -1,4 +1,9 @@
-export { clearError } from './requestActions';
+export {
+  requestStart,
+  requestSuccess,
+  requestFail,
+  clearError
+} from './requestActions';
 export {
   fetchUser,
   signIn,
@@ -12,4 +17,4 @@ export {
   setTrainingPlan,
   setStartDate
 } from './newSeasonActions';
-export { fetchSeason, fetchTrainingPlan } from './seasonActions';
+export { fetchSeason, saveNewSeason } from './seasonActions';

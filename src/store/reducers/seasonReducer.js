@@ -2,7 +2,7 @@ import * as actionTypes from '../actions/actionTypes';
 
 const INITIAL_STATE = {
   ongoingSeason: false
-}
+};
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -11,11 +11,6 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         ongoingSeason: action.ongoingSeason
       };
-    case actionTypes.FETCH_TRAINING_PLAN:
-    return {
-      ...state,
-      ongoingSeason: action.trainingPlan
-    }
     default:
       return state;
   }
