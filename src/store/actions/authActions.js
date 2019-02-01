@@ -2,7 +2,9 @@ import { authRef, db } from '../../config/firebase';
 import * as actionTypes from './actionTypes';
 import { requestStart, requestSuccess, requestFail } from './requestActions';
 
-export const fetchUser = () => dispatch => {
+export const fetchUser = () => async dispatch => {
+  dispatch(requestStart())
+
   authRef.onAuthStateChanged(user => {
     if (user) {
       dispatch({
@@ -15,6 +17,7 @@ export const fetchUser = () => dispatch => {
         authUser: null
       });
     }
+    dispatch(requestSuccess())
   });
 };
 

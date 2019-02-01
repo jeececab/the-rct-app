@@ -7,10 +7,10 @@ import {
   newSeasonStepBack
 } from '../actions';
 
-export const fetchSeason = userId => async dispatch => {
+export const fetchSeason = userId => dispatch => {
   dispatch(requestStart());
   db.ref(`/users/${userId}/ongoingSeason/`).once('value', snapshot => {
-    if (snapshot.exists()) {
+    if (snapshot) {
       dispatch(requestSuccess());
       dispatch({
         type: actionTypes.FETCH_SEASON,

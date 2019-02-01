@@ -14,7 +14,10 @@ import {
 
 class Season extends Component {
   componentWillMount() {
-    this.props.fetchSeason(this.props.userId);
+    const { ongoingSeason } = this.props;
+    if (ongoingSeason === false || !ongoingSeason.template) {
+      this.props.fetchSeason(this.props.userId);
+    }
   }
 
   componentWillUnmount() {
@@ -30,7 +33,7 @@ class Season extends Component {
   };
 
   render() {
-    const { hasSeason, error, isLoading } = this.props;
+    const { ongoingSeason, error, isLoading } = this.props;
 
     let season = (
       <h3>
@@ -43,9 +46,13 @@ class Season extends Component {
 
     if (isLoading) {
       season = <Spinner />;
-    } else if (error) {
+    }
+
+    if (error) {
       season = error && <p>{error}</p>;
-    } else if (hasSeason) {
+    }
+
+    if (ongoingSeason) {
       season = <h2>Todo: My ongoing season</h2>;
     }
 
@@ -67,7 +74,7 @@ class Season extends Component {
 const mapStateToProps = state => {
   return {
     userId: state.auth.authUser.uid,
-    hasSeason: state.season.ongoingSeason,
+    ongoingSeason: state.season.ongoingSeason,
     startingNewSeason: state.newSeason.startingNewSeason,
     error: state.request.error,
     isLoading: state.request.loading
