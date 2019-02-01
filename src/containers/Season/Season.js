@@ -14,10 +14,10 @@ import {
 
 class Season extends Component {
   componentWillMount() {
-    const { ongoingSeason } = this.props;
-    if (ongoingSeason === false || !ongoingSeason.template) {
+    
+    
       this.props.fetchSeason(this.props.userId);
-    }
+    
   }
 
   componentWillUnmount() {

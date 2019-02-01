@@ -5,7 +5,7 @@ import {
   setTrainingPlan,
   setStartDate,
   newSeasonStepBack,
-  saveNewSeason
+  confirmNewSeason
 } from '../../store/actions';
 import Button from '../../components/UI/Button/Button';
 import DatePicker from 'react-datepicker';
@@ -43,7 +43,7 @@ class NewSeason extends Component {
   };
 
   confirmNewSeasonHandler = () => {
-    this.props.saveNewSeason(
+    this.props.confirmNewSeason(
       this.props.trainingPlan,
       this.props.startDate,
       this.props.userId
@@ -155,6 +155,6 @@ export default connect(
     setTrainingPlan,
     setStartDate,
     newSeasonStepBack,
-    saveNewSeason
+    confirmNewSeason
   }
 )(NewSeason);

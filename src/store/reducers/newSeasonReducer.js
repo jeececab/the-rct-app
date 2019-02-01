@@ -34,17 +34,17 @@ export default (state = INITIAL_STATE, action) => {
         trainingPlan: action.trainingPlan,
         newSeasonStep: 'step2'
       };
-    case actionTypes.FETCH_TRAINING_PLAN:
-      return {
-        ...state,
-        trainingPlan: action.trainingPlan
-      };
     case actionTypes.SET_START_DATE:
       return {
         ...state,
         startDate: action.startDate,
         newSeasonStep: 'step3'
       };
+    case actionTypes.CONFIRM_NEW_SEASON:
+      return {
+        ...state,
+        ...INITIAL_STATE
+      }
     default:
       return state;
   }
