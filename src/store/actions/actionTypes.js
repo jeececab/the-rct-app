@@ -9,6 +9,7 @@ export const CLEAR_ERROR = 'CLEAR_ERROR';
 
 // Season action types
 export const FETCH_SEASON = 'FETCH_SEASON';
+export const INIT_SEASON = 'INIT_SEASON'
 
 // Start new season action types
 export const START_NEW_SEASON = 'START_NEWSEASON';

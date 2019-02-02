@@ -18,7 +18,7 @@
 .Primary {
   background: var(--accent);
   border: none;
-  color: var(--font-dark);
+  color: var(--background);
   font-size: 1.25rem;
   padding: 0.5em 1.25em;
   text-transform: uppercase;
@@ -58,25 +58,25 @@
 }
 
 .Link {
-  color: var(--font-accent-darken);
+  color: var(--accent-darken);
   cursor: pointer;
   font-weight: bold;
   text-decoration: none;
 }
 
 .Link:hover {
-  color: var(--font-accent);
+  color: var(--accent);
 }
 
 .Link-danger {
-  color: var(--font-danger-darken);
+  color: var(--danger-darken);
   cursor: pointer;
   font-weight: bold;
   text-decoration: none;
 }
 
 .Link-danger:hover {
-  color: var(--font-danger);
+  color: var(--danger);
 }
 
 .Primary:disabled,

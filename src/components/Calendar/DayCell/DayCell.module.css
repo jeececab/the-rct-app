@@ -1,0 +1,80 @@
+.DayCell {
+  background: var(--black);
+  border: 1px solid var(--darkgray);
+  color: var(--lightgray);
+  cursor: pointer;
+  display: flex;
+  flex-flow: column;
+  font-size: 0.9375rem;
+  justify-content: center;
+  height: 3.38em;
+  list-style: none;
+  padding: 0 0.1em;
+  position: relative;
+  transition: ease-in 0.125s;
+}
+
+.Primary {
+  color: var(--white);
+  font-weight: 500;
+}
+
+.DayCellDate {
+  background: var(--black);
+  font-size: 0.8rem;
+  font-weight: 300;
+  padding: 0 0 0 0.2em;
+  position: absolute;
+  margin: 0;
+  top: 1px;
+  right: 3px;
+}
+
+.base {
+  border-left: 0.5em solid var(--base);
+}
+
+.base:hover {
+  border: 1px solid var(--base);
+  border-left: 0.5em solid var(--base);
+}
+
+.strength {
+  border-left: 0.5em solid var(--strength);
+}
+.strength:hover {
+  border: 1px solid var(--strength);
+  border-left: 0.5em solid var(--strength);
+}
+
+.power {
+  border-left: 0.5em solid var(--power);
+}
+.power:hover {
+  border: 1px solid var(--power);
+  border-left: 0.5em solid var(--power);
+}
+
+.endur {
+  border-left: 0.5em solid var(--endur);
+}
+.endur:hover {
+  border: 1px solid var(--endur);
+  border-left: 0.5em solid var(--endur);
+}
+
+.perf {
+  border-left: 0.5em solid var(--perf);
+}
+.perf:hover {
+  border: 1px solid var(--perf);
+  border-left: 0.5em solid var(--perf);
+}
+
+.rest {
+  border-left: 0.5em solid var(--rest);
+}
+.rest:hover {
+  border: 1px solid var(--rest);
+  border-left: 0.5em solid var(--rest);
+}

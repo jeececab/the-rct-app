@@ -1,5 +1,5 @@
 :root {
-  --background: #0A181B;
+  --background: #0a181b;
   --accent: rgb(9, 199, 142);
   --accent-darken: rgb(9, 199, 142, 0.6);
   --accent-darken2: rgb(9, 199, 142, 0.8);
@@ -7,31 +7,29 @@
   --danger-darken: #c55a5a;
   --black: #091011;
   --blue: #002330;
-  --white: #F7F7F7;
-  --gray: #BABABA;
+  --white: #f7f7f7;
+  --gray: #bababa;
   --darkgray: rgb(122, 122, 122);
-  --lightgray: #DCDCDC;
+  --lightgray: #dcdcdc;
 
-  --font-accent: var(--accent);
-  --font-accent-darken: var(--accent-darken2);
-  --font-danger: var(--danger);
-  --font-danger-darken: var(--danger-darken);
-  --font-dark: var(--background);
-  --font-light: var(--white);
-  --font-sec: var(--lightgray);
-  --font-tert: var(--gray);
+  --base: #5890ff;
+  --strength: #e84600;
+  --power: #fff685;
+  --endur: rgb(185, 64, 74);
+  --perf: var(--accent);
+  --rest: var(--gray);
 }
 
 body {
   background: var(--background);
-  color: var(--font-light);
+  color: var(--lightgray);
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
 }
 
 a {
-  color: var(--font-accent-darken);
+  color: var(--accent-darken);
   cursor: pointer;
   font-weight: bold;
   text-decoration: none;

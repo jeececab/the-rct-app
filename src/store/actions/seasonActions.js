@@ -22,6 +22,11 @@ export const fetchSeason = userId => dispatch => {
   });
 };
 
+export const initSeason = () => dispatch => {
+  dispatch({
+    type: actionTypes.INIT_SEASON
+  })
+}
 
 
 

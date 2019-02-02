@@ -1,28 +1,63 @@
 import React, { Component } from 'react';
 import classes from './Calendar.module.css';
-import Day from './Day/Day';
+import { connect } from 'react-redux';
+import DayCell from './DayCell/DayCell';
 
 class Calendar extends Component {
-  
-  openDayHandler() {
+  openDayHandler = event => {
+    console.log(event.target.id);
+  };
 
-  }
+  formatTitle = day => {
+    let exercise = null;
+    if (day.primaryExercises) {
+      exercise = day.primaryExercises[0];
+    } else if (day.secondaryExercises) {
+      exercise = day.secondaryExercises[0];
+    }
+    const title = exercise
+      .replace(/([A-Z])/g, ' $1')
+      .replace(/^./, function(str) {
+        return str.toUpperCase();
+      });
+
+    return title;
+  };
+
+  getTitleStyle = day => {
+    let style = null;
+    if (day.primaryExercises) {
+      style = 'Primary';
+    }
+    return style;
+  };
 
   render() {
-    return(
-      <ul className={classes.Calendar}>
-        <Day key='1' clicked={this.openDayHandler}>Day 1</Day>
-        <Day key='2' clicked={this.openDayHandler}>Day 2</Day>
-        <Day key='3' clicked={this.openDayHandler}>Day 3</Day>
-        <Day key='4' clicked={this.openDayHandler}>Day 4</Day>
-        <Day key='5' clicked={this.openDayHandler}>Day 5</Day>
-        <Day key='6' clicked={this.openDayHandler}>Day 6</Day>
-        <Day key='7' clicked={this.openDayHandler}>Day 7</Day>
-        <Day key='8' clicked={this.openDayHandler}>Day 8</Day>
-        <Day key='9' clicked={this.openDayHandler}>Day 9</Day>
-      </ul>
-    );
+    const { trainingDays } = this.props;
+
+    const days = trainingDays.map(day => {
+      return (
+        <DayCell
+          phase={day.phase}
+          dayDate={day.date.split(' ')[2]}
+          titleStyle={this.getTitleStyle(day)}
+          key={day.id}
+          id={day.id}
+          clicked={this.openDayHandler}
+        >
+          {this.formatTitle(day)}
+        </DayCell>
+      );
+    });
+
+    return <ul className={classes.Calendar}>{days}</ul>;
   }
 }
 
-export default Calendar;
+const mapStateToProps = state => {
+  return {
+    trainingDays: state.season.ongoingSeason.trainingDays
+  };
+};
+
+export default connect(mapStateToProps)(Calendar);

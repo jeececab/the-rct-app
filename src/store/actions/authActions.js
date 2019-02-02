@@ -1,9 +1,14 @@
 import { authRef, db } from '../../config/firebase';
 import * as actionTypes from './actionTypes';
-import { requestStart, requestSuccess, requestFail } from './requestActions';
+import {
+  requestStart,
+  requestSuccess,
+  requestFail,
+  initSeason
+} from '../actions';
 
 export const fetchUser = () => async dispatch => {
-  dispatch(requestStart())
+  dispatch(requestStart());
 
   authRef.onAuthStateChanged(user => {
     if (user) {
@@ -17,7 +22,7 @@ export const fetchUser = () => async dispatch => {
         authUser: null
       });
     }
-    dispatch(requestSuccess())
+    dispatch(requestSuccess());
   });
 };
 
@@ -71,6 +76,7 @@ export const signOut = () => dispatch => {
   authRef
     .signOut()
     .then(() => {
+      dispatch(initSeason())
       dispatch(requestSuccess());
     })
     .catch(error => {

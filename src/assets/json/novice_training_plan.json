@@ -2,31 +2,39 @@
   "trainingDays": [
     {
       "id": "day-1",
-      "phase": "base"
+      "phase": "base",
+      "primaryExercises": ["outdoorMileage"],
+      "secondaryExercises": ["restPractice"]
     },
     {
       "id": "day-2",
-      "phase":"strength"
+      "phase": "strength",
+      "primaryExercises": ["beginnerHangboard"],
+      "secondaryExercises": ["pushUps"]
     },
     {
       "id": "day-3",
-      "phase":"power"
+      "phase": "power",
+      "primaryExercises": ["beginnerCampus"],
+      "secondaryExercises": ["pullUps"]
     },
     {
       "id": "day-4",
-      "phase":"endur"
-    },
-    {
-      "id": "day-5",
-      "phase":"endur"
+      "phase": "endur",
+      "primaryExercises": ["linkedBoulderCircuit"],
+      "secondaryExercises": ["legLifts"]
     },
     {
       "id": "day-6",
-      "phase":"perf"
+      "phase": "perf",
+      "primaryExercises": ["redpointAttempts"],
+      "secondaryExercises": ["outdoorMileage"]
     },
     {
       "id": "day-7",
-      "phase":"rest"
+      "phase": "rest",
+      "primaryExercises": [],
+      "secondaryExercises": ["aerobicExercise"]
     }
   ]
 }

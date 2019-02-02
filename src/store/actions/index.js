@@ -18,4 +18,4 @@ export {
   setStartDate,
   confirmNewSeason
 } from './newSeasonActions';
-export { fetchSeason } from './seasonActions';
+export { fetchSeason, initSeason } from './seasonActions';

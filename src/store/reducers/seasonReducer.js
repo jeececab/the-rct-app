@@ -11,6 +11,11 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         ongoingSeason: action.ongoingSeason
       };
+    case actionTypes.INIT_SEASON:
+      return {
+        ...state,
+        ...INITIAL_STATE
+      };
     default:
       return state;
   }
