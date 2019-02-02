@@ -84,3 +84,14 @@
 .Link:disabled {
   cursor: not-allowed;
 }
+
+.Cell {
+  border: 1px solid var(--accent-darken);
+  color: var(--accent-darken);
+  height: 3.3em;
+}
+
+.Cell:hover {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}

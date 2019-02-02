@@ -10,7 +10,7 @@ import SignIn from './components/SignIn/SignIn';
 import PasswordForget from './components/PasswordForget/PasswordForget';
 import Account from './containers/Account/Account';
 import Season from './containers/Season/Season';
-
+import Day from './containers/Day/Day';
 import { fetchUser } from './store/actions';
 
 class App extends Component {
@@ -43,6 +43,7 @@ class App extends Component {
           <Switch>
             <Route path={ROUTES.ACCOUNT} component={Account} />
             <Route path={ROUTES.SEASON} component={Season} />
+            <Route path={ROUTES.DAYS + '/:id'} component={Day} />
             <Redirect to={ROUTES.ACCOUNT} />
           </Switch>
         </React.Fragment>

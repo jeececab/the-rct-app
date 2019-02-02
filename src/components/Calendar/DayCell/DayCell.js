@@ -12,8 +12,8 @@ const DayCell = props => {
       id={props.id}
       onClick={props.clicked}
     >
-      <p className={classes.DayCellDate}>{props.dayDate}</p>
-      {props.children}
+        <p className={classes.DayCellDate}>{props.dayDate}</p>
+        {props.children}
     </li>
   );
 };

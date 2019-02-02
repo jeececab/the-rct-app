@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import classes from './Calendar.module.css';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import DayCell from './DayCell/DayCell';
+import Button from '../UI/Button/Button';
 
 class Calendar extends Component {
-  openDayHandler = event => {
-    console.log(event.target.id);
-  };
-
   formatTitle = day => {
     let exercise = null;
     if (day.primaryExercises) {
@@ -32,6 +30,10 @@ class Calendar extends Component {
     return style;
   };
 
+  openDayHandler = event => {
+    this.props.history.push('/days/' + event.target.id);
+  };
+
   render() {
     const { trainingDays } = this.props;
 
@@ -50,7 +52,14 @@ class Calendar extends Component {
       );
     });
 
-    return <ul className={classes.Calendar}>{days}</ul>;
+    return (
+      <React.Fragment>
+        <ul className={classes.Calendar}>
+          {days}
+          <Button btnType="Cell">Add day</Button>
+        </ul>
+      </React.Fragment>
+    );
   }
 }
 
@@ -60,4 +69,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Calendar);
+export default withRouter(connect(mapStateToProps)(Calendar));
