@@ -6,9 +6,10 @@
   --danger: #be3636;
   --danger-darken: #c55a5a;
   --black: #091011;
-  --blue: #003346;
+  --blue: #002330;
   --white: #F7F7F7;
   --gray: #BABABA;
+  --darkgray: rgb(122, 122, 122);
   --lightgray: #DCDCDC;
 
   --font-accent: var(--accent);

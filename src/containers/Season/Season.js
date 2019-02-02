@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classes from './Season.module.css';
 import { connect } from 'react-redux';
+import Calendar from '../../components/Calendar/Calendar';
 import NewSeason from '../../components/NewSeason/NewSeason';
 import Modal from '../../components/UI/Modal/Modal';
 import Button from '../../components/UI/Button/Button';
@@ -53,7 +54,7 @@ class Season extends Component {
     }
 
     if (ongoingSeason) {
-      season = <h2>Todo: My ongoing season</h2>;
+      season = <Calendar />;
     }
 
     return (

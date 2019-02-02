@@ -1,0 +1,20 @@
+.Calendar {
+  box-sizing: border-box;
+  background: var(--blue);
+  border: 1px solid var(--darkgray);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7.8em, 1fr));
+  grid-gap: 0.6em;
+  margin: 1.5em auto;
+  padding: 0.6em;
+  width: 90%;
+  max-width: 1100px;;
+}
+
+
+
+@media (min-width: 1260px) {
+  .Calendar {
+    grid-template-columns: repeat(7, 1fr);
+  }
+} 
