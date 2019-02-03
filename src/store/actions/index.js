@@ -19,3 +19,4 @@ export {
   confirmNewSeason
 } from './newSeasonActions';
 export { fetchSeason, initSeason } from './seasonActions';
+export { getDay } from './dayAction';

@@ -17,3 +17,6 @@ export const NEW_SEASON_STEP_BACK = 'NEW_SEASON_STEP_BACK';
 export const SET_TRAINING_PLAN = 'SET_TRAINING_PLAN';
 export const SET_START_DATE = 'SET_STARTDATE';
 export const CONFIRM_NEW_SEASON = 'CONFIRM_NEW_SEASON';
+
+// Day action types
+export const GET_DAY = 'GET_DAY';

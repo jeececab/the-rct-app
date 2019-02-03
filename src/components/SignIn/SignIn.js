@@ -8,7 +8,7 @@ import SignInForm from './SignInForm/SignInForm';
 class SignIn extends Component {
   componentDidMount() {
     if (this.props.authUser === null) {
-       this.props.history.push('/signin');
+       this.props.history.push(ROUTES.SIGN_IN);
     }
   }
   

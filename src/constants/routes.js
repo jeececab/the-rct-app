@@ -3,5 +3,5 @@ export const SIGN_IN = '/signin';
 export const HOME = '/home';
 export const ACCOUNT = '/account';
 export const SEASON = '/season';
-export const DAYS = '/days';
+export const TRAINING_DAYS = '/training-days';
 export const PASSWORD_FORGET = '/pw-forget';

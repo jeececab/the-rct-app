@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classes from './Calendar.module.css';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
 import DayCell from './DayCell/DayCell';
 import Button from '../UI/Button/Button';
 
@@ -31,7 +32,7 @@ class Calendar extends Component {
   };
 
   openDayHandler = event => {
-    this.props.history.push('/days/' + event.target.id);
+    this.props.history.push(ROUTES.TRAINING_DAYS + '/' + event.target.id);
   };
 
   render() {

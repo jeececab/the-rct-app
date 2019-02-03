@@ -4,8 +4,9 @@ import {
   requestStart,
   requestSuccess,
   requestFail,
-  initSeason
+  initSeason, fetchSeason
 } from '../actions';
+
 
 export const fetchUser = () => async dispatch => {
   dispatch(requestStart());
@@ -16,6 +17,7 @@ export const fetchUser = () => async dispatch => {
         type: actionTypes.FETCH_USER,
         authUser: user
       });
+      dispatch(fetchSeason(user.uid));
     } else {
       dispatch({
         type: actionTypes.FETCH_USER,

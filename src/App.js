@@ -39,7 +39,7 @@ class App extends Component {
           />
           <Route path={ROUTES.SEASON} component={authUser ? Season : SignIn} />
           <Route
-            path={ROUTES.DAYS + '/:id'}
+            path={ROUTES.TRAINING_DAYS + '/:id'}
             component={authUser ? Day : SignIn}
           />
 

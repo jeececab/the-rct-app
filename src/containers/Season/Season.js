@@ -7,20 +7,12 @@ import Modal from '../../components/UI/Modal/Modal';
 import Button from '../../components/UI/Button/Button';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import {
-  fetchSeason,
   clearError,
   startNewSeason,
   newSeasonStepBack
 } from '../../store/actions';
 
 class Season extends Component {
-  componentWillMount() {
-    const { ongoingSeason } = this.props;
-    if (!ongoingSeason && ongoingSeason !== null) {
-      this.props.fetchSeason(this.props.userId);
-    }
-  }
-
   componentWillUnmount() {
     this.props.clearError();
   }
@@ -84,5 +76,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { fetchSeason, clearError, startNewSeason, newSeasonStepBack }
+  { clearError, startNewSeason, newSeasonStepBack }
 )(Season);
