@@ -25,7 +25,7 @@ class PasswordForgetForm extends Component {
   }
 
   componentWillUnmount() {
-    clearError();
+    this.props.clearError(this.props.error);
   }
 
   handleSubmit = event => {

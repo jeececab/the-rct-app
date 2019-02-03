@@ -34,31 +34,35 @@ class App extends Component {
           </Switch>
 
           <Switch>
-          <Route
-            path={ROUTES.ACCOUNT}
-            component={authUser ? Account : SignIn}
-          />
-          <Route path={ROUTES.SEASON} component={authUser ? Season : SignIn} />
-          <Route
-            exact
-            path={ROUTES.TRAINING_DAYS + '/:id'}
-            component={authUser ? Day : SignIn}
-          />
+            <Route
+              path={ROUTES.ACCOUNT}
+              component={authUser ? Account : SignIn}
+            />
+            <Route
+              path={ROUTES.SEASON}
+              component={authUser ? Season : SignIn}
+            />
+            <Route
+              exact
+              path={ROUTES.TRAINING_DAYS + '/:id'}
+              component={authUser ? Day : SignIn}
+            />
 
-          <Route
-            path={ROUTES.SIGN_IN}
-            component={!authUser ? SignIn : Account}
-          />
-          <Route
-            path={ROUTES.SIGN_UP}
-            component={!authUser ? SignUp : Account}
-          />
-          <Route
-            path={ROUTES.PASSWORD_FORGET}
-            component={!authUser ? PasswordForget : Account}
-          />
-          <Route exact path="/" component={!authUser ? Landing : Account} />
-          <Redirect to="/" /></Switch>
+            <Route
+              path={ROUTES.SIGN_IN}
+              component={!authUser ? SignIn : Account}
+            />
+            <Route
+              path={ROUTES.SIGN_UP}
+              component={!authUser ? SignUp : Account}
+            />
+            <Route
+              path={ROUTES.PASSWORD_FORGET}
+              component={!authUser ? PasswordForget : Account}
+            />
+            <Route exact path="/" component={!authUser ? Landing : Account} />
+            <Redirect to="/" />
+          </Switch>
         </React.Fragment>
       );
     }

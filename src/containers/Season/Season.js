@@ -14,7 +14,7 @@ import {
 
 class Season extends Component {
   componentWillUnmount() {
-    this.props.clearError();
+    this.props.clearError(this.props.error);
   }
 
   startNewSeasonHandler = () => {

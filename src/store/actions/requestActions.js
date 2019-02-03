@@ -19,8 +19,10 @@ export const requestFail = error => {
   };
 };
 
-export const clearError = () => {
-  return {
-    type: actionTypes.CLEAR_ERROR
+export const clearError = error => dispatch => {
+  if (error !== null) {
+    dispatch({
+      type: actionTypes.CLEAR_ERROR
+    });
   }
-}
+};

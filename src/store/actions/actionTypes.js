@@ -18,4 +18,5 @@ export const SET_TRAINING_PLAN = 'SET_TRAINING_PLAN';
 export const SET_START_DATE = 'SET_STARTDATE';
 export const CONFIRM_NEW_SEASON = 'CONFIRM_NEW_SEASON';
 
-// Day action types
+// Exercises action types
+export const FETCH_EXERCISES = 'FETCH_EXERCISES';

@@ -4,9 +4,10 @@ import {
   requestStart,
   requestSuccess,
   requestFail,
-  initSeason, fetchSeason
+  initSeason,
+  fetchSeason,
+  fetchExercises
 } from '../actions';
-
 
 export const fetchUser = () => async dispatch => {
   dispatch(requestStart());
@@ -18,6 +19,7 @@ export const fetchUser = () => async dispatch => {
         authUser: user
       });
       dispatch(fetchSeason(user.uid));
+      dispatch(fetchExercises())
     } else {
       dispatch({
         type: actionTypes.FETCH_USER,
@@ -78,7 +80,7 @@ export const signOut = () => dispatch => {
   authRef
     .signOut()
     .then(() => {
-      dispatch(initSeason())
+      dispatch(initSeason());
       dispatch(requestSuccess());
     })
     .catch(error => {

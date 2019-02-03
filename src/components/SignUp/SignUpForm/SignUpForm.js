@@ -30,7 +30,7 @@ class SignUpForm extends Component {
   }
 
   componentWillUnmount() {
-    this.props.clearError();
+    this.props.clearError(this.props.error);
   }
 
   handleSubmit = event => {
