@@ -11,8 +11,9 @@ const DayCell = props => {
       ].join(' ')}
       id={props.id}
       onClick={props.clicked}
+      title={props.dayDate}
     >
-        <p className={classes.DayCellDate}>{props.dayDate}</p>
+        <p className={classes.DayCellDate}>{props.dayDate.split(' ')[2]}</p>
         {props.children}
     </li>
   );

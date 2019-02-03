@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import * as ROUTES from './constants/routes';
@@ -33,12 +33,14 @@ class App extends Component {
             <Navigation />
           </Switch>
 
+          <Switch>
           <Route
             path={ROUTES.ACCOUNT}
             component={authUser ? Account : SignIn}
           />
           <Route path={ROUTES.SEASON} component={authUser ? Season : SignIn} />
           <Route
+            exact
             path={ROUTES.TRAINING_DAYS + '/:id'}
             component={authUser ? Day : SignIn}
           />
@@ -56,6 +58,7 @@ class App extends Component {
             component={!authUser ? PasswordForget : Account}
           />
           <Route exact path="/" component={!authUser ? Landing : Account} />
+          <Redirect to="/" /></Switch>
         </React.Fragment>
       );
     }

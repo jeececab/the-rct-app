@@ -42,7 +42,7 @@ class Calendar extends Component {
       return (
         <DayCell
           phase={day.phase}
-          dayDate={day.date.split(' ')[2]}
+          dayDate={day.date}
           titleStyle={this.getTitleStyle(day)}
           key={day.id}
           id={day.id}
