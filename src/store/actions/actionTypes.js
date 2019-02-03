@@ -19,4 +19,3 @@ export const SET_START_DATE = 'SET_STARTDATE';
 export const CONFIRM_NEW_SEASON = 'CONFIRM_NEW_SEASON';
 
 // Day action types
-export const GET_DAY = 'GET_DAY';
