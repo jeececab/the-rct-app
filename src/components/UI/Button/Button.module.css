@@ -86,6 +86,7 @@
 }
 
 .Cell {
+  background: var(--black);
   border: 1px solid var(--accent-darken);
   color: var(--accent-darken);
   height: 3.3em;

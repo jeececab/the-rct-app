@@ -26,7 +26,7 @@ class SignInForm extends Component {
   }
 
   componentWillUnmount() {
-    this.props.clearError()
+    this.props.clearError();
   }
 
   handleSubmit = event => {

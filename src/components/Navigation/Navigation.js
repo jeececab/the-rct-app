@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 
@@ -18,7 +19,9 @@ class Layout extends Component {
   };
 
   render() {
-    return (
+    const { authUser } = this.props;
+
+    let nav = (
       <React.Fragment>
         <Toolbar drawerToggleClicked={this.sideDrawerToggleHandler} />
         <SideDrawer
@@ -27,7 +30,19 @@ class Layout extends Component {
         />
       </React.Fragment>
     );
+
+    if (!authUser) {
+      nav = null;
+    }
+
+    return <React.Fragment>{nav}</React.Fragment>;
   }
 }
 
-export default Layout;
+const mapStateToProps = state => {
+  return {
+    authUser: state.auth.authUser
+  };
+};
+
+export default connect(mapStateToProps)(Layout);
