@@ -13,7 +13,6 @@ const ExercisesList = props => {
         <ExerciseItem
           key={exer}
           exerciseID={exer}
-          type="PrimaryExercise"
           phase={day.phase}
         />
       );
@@ -26,7 +25,6 @@ const ExercisesList = props => {
         <ExerciseItem
           key={exer}
           exerciseID={exer}
-          type="SecondaryExercise"
           phase="secondary"
         />
       );

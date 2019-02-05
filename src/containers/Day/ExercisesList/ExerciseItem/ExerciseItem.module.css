@@ -5,6 +5,7 @@
   list-style: none;
   max-width: 900px;
   margin: 1em auto;
+  position: relative;
   width: 90%;
 }
 
@@ -16,19 +17,42 @@
 }
 
 .ExerciseItem h3:hover {
-  background: var(--background);
+  background: var(--black-hover);
+}
+
+.Arrow {
+  border-left: 0.45em solid var(--white);
+  border-top: 0.45em solid transparent;
+  border-bottom: 0.45em solid transparent;
+  cursor: pointer;
+  display: inline-block;
+  height: 0;
+  position: absolute;
+  right: 0.6em;
+  top: 0.7em;
+  transition: 125ms;
+  width: 0;
+}
+
+.Arrow:focus {
+  outline: none;
+}
+
+.Arrow--down {
+  transform: rotate(90deg);
+}
+
+.Content {
+  display: none;
+}
+
+.Display {
+  display: block;
 }
 
 .ExerciseItem p {
   padding: 0 0.5em;
 }
-/* .PrimaryExercise {
-  
-}
-
-.SecondaryExercise {
-  
-} */
 
 .base {
   border-left: 0.5em solid var(--base);

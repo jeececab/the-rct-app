@@ -7,7 +7,12 @@ class ExerciseItem extends Component {
     opened: false
   };
 
-  toggleExerciseHandler = () => {};
+  toggleContentHandler = () => {
+    const $state = { ...this.state };
+    this.setState({
+      opened: !$state.opened
+    });
+  };
 
   formatTitle = exer => {
     const title = exer.replace(/([A-Z])/g, ' $1').replace(/^./, function(str) {
@@ -17,21 +22,28 @@ class ExerciseItem extends Component {
   };
 
   render() {
-    const { exercisesList, exerciseID, type, phase } = this.props;
+    const { exercisesList, exerciseID, phase } = this.props;
+    const { opened } = this.state;
 
     let exerItemUI = null;
 
     if (exercisesList) {
       exerItemUI = (
-        <li
-          className={[classes.ExerciseItem, classes[type], classes[phase]].join(
-            ' '
-          )}
-          onClick={this.toggleExerciseHandler}
-        >
-          <h3>{this.formatTitle(exerciseID)}</h3>
+        <li className={[classes.ExerciseItem, classes[phase]].join(' ')}>
+          <h3 onClick={this.toggleContentHandler}>
+            {this.formatTitle(exerciseID)}
+          </h3>
           <div
-            className={[classes.Content, classes[this.state.opened]].join(' ')}
+            className={[
+              classes.Arrow,
+              classes[opened ? 'Arrow--down' : null]
+            ].join(' ')}
+          />
+          <div
+            className={[
+              classes.Content,
+              classes[opened ? 'Display' : null]
+            ].join(' ')}
           >
             <p>{exercisesList[exerciseID].directives}</p>
           </div>
