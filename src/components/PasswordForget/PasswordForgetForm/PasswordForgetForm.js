@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classes from './PasswordForgetForm.module.css';
 import { connect } from 'react-redux';
-import { resetPassword, clearError } from '../../../store/actions';
+import { sendPWreset, clearPWreset, clearError } from '../../../store/actions';
 import PropTypes from 'prop-types';
 import * as ROUTES from '../../../constants/routes';
 import Button from '../../UI/Button/Button';
@@ -19,7 +19,8 @@ class PasswordForgetForm extends Component {
   };
 
   componentWillUpdate(nextProps) {
-    if (nextProps.pwResetSent) {
+    if (nextProps.pwResetSuccess) {
+      this.props.clearPWreset()
       this.context.router.history.push(ROUTES.SIGN_IN);
     }
   }
@@ -29,9 +30,7 @@ class PasswordForgetForm extends Component {
   }
 
   handleSubmit = event => {
-    const { resetPassword } = this.props;
-    const { email } = this.state;
-    resetPassword(email);
+    this.props.sendPWreset(this.state.email);
     event.preventDefault();
   };
 
@@ -78,11 +77,11 @@ function mapStateToProps(state) {
     authUser: state.request.authUser,
     error: state.request.error,
     isLoading: state.request.loading,
-    pwResetSent: state.request.pwResetSent
+    pwResetSuccess: state.auth.pwResetSuccess
   };
 }
 
 export default connect(
   mapStateToProps,
-  { resetPassword, clearError }
+  { sendPWreset, clearPWreset, clearError }
 )(PasswordForgetForm);

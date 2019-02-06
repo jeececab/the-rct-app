@@ -1,5 +1,7 @@
 // Auth action types
 export const FETCH_USER = 'FETCH_USER';
+export const SEND_PWRESET = 'SEND_PWRESET';
+export const CLEAR_PWRESET ='CLEAR_PWRESET';
 
 // Request action types
 export const REQUEST_START = 'REQUEST_START';

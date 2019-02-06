@@ -9,7 +9,8 @@ export {
   signIn,
   signUp,
   signOut,
-  resetPassword
+  sendPWreset,
+  clearPWreset
 } from './authActions';
 export {
   startNewSeason,

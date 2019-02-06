@@ -11,7 +11,6 @@ import {
 
 export const fetchUser = () => async dispatch => {
   dispatch(requestStart());
-
   authRef.onAuthStateChanged(user => {
     if (user) {
       dispatch({
@@ -19,7 +18,7 @@ export const fetchUser = () => async dispatch => {
         authUser: user
       });
       dispatch(fetchSeason(user.uid));
-      dispatch(fetchExercises())
+      dispatch(fetchExercises());
     } else {
       dispatch({
         type: actionTypes.FETCH_USER,
@@ -32,7 +31,6 @@ export const fetchUser = () => async dispatch => {
 
 export const signIn = (email, password) => dispatch => {
   dispatch(requestStart());
-
   authRef
     .signInWithEmailAndPassword(email, password)
     .then(() => {
@@ -45,7 +43,6 @@ export const signIn = (email, password) => dispatch => {
 
 export const signUp = (email, password, username) => dispatch => {
   dispatch(requestStart());
-
   authRef
     .createUserWithEmailAndPassword(email, password)
     .then(result => {
@@ -61,22 +58,29 @@ export const signUp = (email, password, username) => dispatch => {
     });
 };
 
-export const resetPassword = email => dispatch => {
+export const sendPWreset = email => dispatch => {
   dispatch(requestStart());
-
   authRef
     .sendPasswordResetEmail(email)
     .then(() => {
       dispatch(requestSuccess());
+      dispatch({
+        type: actionTypes.SEND_PWRESET
+      });
     })
     .catch(error => {
       dispatch(requestFail(error));
     });
 };
 
+export const clearPWreset = () => dispatch => {
+  dispatch({
+    type: actionTypes.CLEAR_PWRESET
+  })
+}
+
 export const signOut = () => dispatch => {
   dispatch(requestStart());
-
   authRef
     .signOut()
     .then(() => {
