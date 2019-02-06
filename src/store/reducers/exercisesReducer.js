@@ -1,7 +1,7 @@
 import * as actionTypes from '../actions/actionTypes';
 
 const INITIAL_STATE = {
-  exercisesList: null
+  exercises: null
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -9,7 +9,7 @@ export default (state = INITIAL_STATE, action) => {
     case actionTypes.FETCH_EXERCISES:
       return {
         ...state,
-        exercisesList: action.exercises
+        exercises: action.exercises
       };
     default:
       return state;

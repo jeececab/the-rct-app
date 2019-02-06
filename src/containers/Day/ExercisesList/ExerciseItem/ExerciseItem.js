@@ -57,7 +57,7 @@ class ExerciseItem extends Component {
 
 const mapStateToProps = state => {
   return {
-    exercisesList: state.exercises.exercisesList
+    exercisesList: state.exercises.exercises.exercisesList
   };
 };
 
