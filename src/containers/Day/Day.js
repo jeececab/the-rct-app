@@ -13,6 +13,12 @@ class Day extends Component {
     this.props.history.push(`${ROUTES.TRAINING_DAYS}/day-${newDayNb}`);
   };
 
+  componentDidUpdate() {
+    if(this.props.ongoingSeason === null) {
+      this.props.history.push(ROUTES.SEASON)
+    } 
+  }
+
   render() {
     const { isLoading, ongoingSeason } = this.props;
 

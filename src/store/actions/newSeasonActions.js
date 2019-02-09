@@ -1,6 +1,11 @@
 import * as actionTypes from './actionTypes';
 import { db } from '../../config/firebase';
-import { fetchSeason } from '../actions';
+import {
+  requestStart,
+  requestSuccess,
+  requestFail,
+  fetchSeason
+} from '../actions';
 
 export const startNewSeason = () => dispatch => {
   dispatch({
@@ -30,6 +35,7 @@ export const setStartDate = date => dispatch => {
 };
 
 const exportNewSeason = (userId, template, trainingDays) => dispatch => {
+  dispatch(requestStart())
   db.ref(`/users/${userId}/ongoingSeason/`).set(
     {
       template: template,
@@ -37,9 +43,11 @@ const exportNewSeason = (userId, template, trainingDays) => dispatch => {
     },
     error => {
       if (error) {
+        dispatch(requestFail('Failed to save data on the database'))
         console.log(error);
       } else {
         dispatch(fetchSeason(userId));
+        dispatch(requestSuccess())
       }
     }
   );

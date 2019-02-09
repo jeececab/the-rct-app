@@ -7,6 +7,7 @@ import {
   newSeasonStepBack,
   confirmNewSeason
 } from '../../store/actions';
+import Spinner from '../UI/Spinner/Spinner';
 import Button from '../../components/UI/Button/Button';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -51,7 +52,7 @@ class NewSeason extends Component {
   };
 
   render() {
-    const { step, startDate, trainingPlan } = this.props;
+    const { isLoading, step, startDate, trainingPlan } = this.props;
 
     let UIstep = (
       <React.Fragment>
@@ -78,6 +79,10 @@ class NewSeason extends Component {
         </p>
       </React.Fragment>
     );
+
+    if (isLoading) {
+      UIstep = <Spinner />
+    }
 
     const isInvalid = this.state.changedDate === null;
 
@@ -145,7 +150,8 @@ const mapStateToProps = state => {
     step: state.newSeason.newSeasonStep,
     startDate: state.newSeason.startDate,
     trainingPlan: state.newSeason.trainingPlan,
-    userId: state.auth.authUser.uid
+    userId: state.auth.authUser.uid,
+    isLoading: state.request.loading
   };
 };
 
