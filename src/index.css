@@ -4,7 +4,8 @@
   --accent-darken: rgb(9, 199, 142, 0.6);
   --accent-darken2: rgb(9, 199, 142, 0.8);
   --danger: #be3636;
-  --danger-darken: #c55a5a;
+  --danger-lighten: #c55a5a;
+  --danger-darken: #691f1f;
   --black: #091011;
   --black-hover: #080808;
   --blue: #002330;

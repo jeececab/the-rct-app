@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classes from './ExerciseItem.module.css';
 import { connect } from 'react-redux';
+import Button from '../../UI/Button/Button';
 
 class ExerciseItem extends Component {
   state = {
@@ -48,6 +49,7 @@ class ExerciseItem extends Component {
             ].join(' ')}
           >
             <p>{exercise.directives}</p>
+            <Button btnType="Delete" clicked={this.deleteExerciseHandler}>Delete</Button>
           </div>
         </li>
       );

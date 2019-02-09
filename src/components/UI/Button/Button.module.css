@@ -57,6 +57,20 @@
   background: var(--accent-darken);
 }
 
+.Delete {
+  background: transparent;
+  border: 0.095em solid var(--danger);
+  color: var(--danger);
+  font-size: 1rem;
+  margin: 0.5em;
+  padding: 0.5em 0.5em;
+  text-transform: uppercase;
+}
+
+.Delete:hover {
+  background: var(--danger-darken);
+}
+
 .Link {
   color: var(--accent-darken);
   cursor: pointer;
@@ -69,7 +83,7 @@
 }
 
 .Link-danger {
-  color: var(--danger-darken);
+  color: var(--danger-lighten);
   cursor: pointer;
   font-weight: bold;
   text-decoration: none;

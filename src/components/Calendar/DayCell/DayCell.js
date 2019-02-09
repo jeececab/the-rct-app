@@ -13,7 +13,7 @@ const DayCell = props => {
       onClick={props.clicked}
       title={props.dayDate}
     >
-        <p className={classes.DayCellDate}>{props.dayDate.split(' ')[2]}</p>
+        <p className={classes.DateNb}>{props.dayDate.split(' ')[2]}</p>
         {props.children}
     </li>
   );

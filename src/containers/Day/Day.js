@@ -4,13 +4,12 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 import Spinner from '../../components/UI/Spinner/Spinner';
-import ExercisesList from './ExercisesList/ExercisesList';
+import ExercisesList from '../../components/ExercisesList/ExercisesList';
 
 class Day extends Component {
   browseDayHandler = (dayId, nb) => {
     const currentDayNb = +dayId.split('-')[1];
     const newDayNb = currentDayNb + nb;
-    console.log(this.props.ongoingSeason.trainingDays.length);
     this.props.history.push(`${ROUTES.TRAINING_DAYS}/day-${newDayNb}`);
   };
 
