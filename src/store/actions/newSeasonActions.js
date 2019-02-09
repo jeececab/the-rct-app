@@ -29,7 +29,7 @@ export const setStartDate = date => dispatch => {
   });
 };
 
-const exportNewSeason = (userId, template, trainingDays) => async dispatch => {
+const exportNewSeason = (userId, template, trainingDays) => dispatch => {
   db.ref(`/users/${userId}/ongoingSeason/`).set(
     {
       template: template,

@@ -13,10 +13,10 @@
   --darkgray: rgb(122, 122, 122);
   --lightgray: #dcdcdc;
 
-  --base: #5890ff;
-  --strength: #e84600;
-  --power: #fff685;
-  --endur: rgb(185, 64, 74);
+  --base: #5a7ec7;
+  --strength: #b37054;
+  --power: #eeeaba;
+  --endur: rgb(139, 44, 44);
   --perf: var(--accent);
   --rest: var(--gray);
 }

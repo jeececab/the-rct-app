@@ -6,3 +6,35 @@
 .DayInvalid {
   margin-top: 105px;
 }
+
+.Arrow {
+  border-top: 1em solid transparent;
+  border-bottom: 1em solid transparent;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+}
+
+.ArrowLeft {
+  border-right: 2.5em solid var(--gray);
+}
+
+.ArrowRight {
+  border-left: 2.5em  solid var(--gray);
+}
+
+.ArrowLeft:hover {
+  border-right: 2.5em  solid var(--white);
+}
+
+.ArrowRight:hover {
+  border-left: 2.5em solid var(--white);
+}
+
+.Arrows {
+  display: flex;
+  justify-content: space-between;
+  margin: 2em auto;
+  width: 90%;
+  max-width: 18em;
+}

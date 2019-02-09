@@ -6,7 +6,7 @@ export const fetchSeason = userId => dispatch => {
     if (snapshot) {
       dispatch({
         type: actionTypes.FETCH_SEASON,
-        ongoingSeason: snapshot.val()
+        ongoingSeason: snapshot.val() || null
       });
     } else {
       console.log('Failed to load content from the database');

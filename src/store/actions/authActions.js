@@ -9,7 +9,7 @@ import {
   fetchExercises
 } from '../actions';
 
-export const fetchUser = () => async dispatch => {
+export const fetchUser = () => dispatch => {
   dispatch(requestStart());
   authRef.onAuthStateChanged(user => {
     if (user) {
@@ -17,15 +17,16 @@ export const fetchUser = () => async dispatch => {
         type: actionTypes.FETCH_USER,
         authUser: user
       });
-      dispatch(fetchSeason(user.uid));
+      dispatch(fetchSeason(user.uid))
       dispatch(fetchExercises());
+      dispatch(requestSuccess());
     } else {
       dispatch({
         type: actionTypes.FETCH_USER,
         authUser: null
       });
+      dispatch(requestSuccess());
     }
-    dispatch(requestSuccess());
   });
 };
 

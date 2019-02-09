@@ -28,14 +28,7 @@ class Season extends Component {
   render() {
     const { ongoingSeason, error, isLoading } = this.props;
 
-    let season = (
-      <h3>
-        No season yet?{' '}
-        <Button btnType="Link" clicked={this.startNewSeasonHandler}>
-          Start a new season
-        </Button>
-      </h3>
-    );
+    let season = false;
 
     if (isLoading) {
       season = <Spinner />;
@@ -47,6 +40,15 @@ class Season extends Component {
 
     if (ongoingSeason) {
       season = <Calendar />;
+    } else if (ongoingSeason === null) {
+      season = (
+        <h3>
+          No season yet?{' '}
+          <Button btnType="Link" clicked={this.startNewSeasonHandler}>
+            Start a new season
+          </Button>
+        </h3>
+      );
     }
 
     return (

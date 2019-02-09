@@ -22,12 +22,14 @@ class ExerciseItem extends Component {
   };
 
   render() {
-    const { exercisesList, exerciseID, phase } = this.props;
+    const { exercises, exerciseID, phase } = this.props;
     const { opened } = this.state;
 
     let exerItemUI = null;
 
-    if (exercisesList) {
+    if (exercises !== null) {
+      const exercise = exercises.exercisesList[exerciseID]
+
       exerItemUI = (
         <li className={[classes.ExerciseItem, classes[phase]].join(' ')}>
           <h3 onClick={this.toggleContentHandler}>
@@ -45,7 +47,7 @@ class ExerciseItem extends Component {
               classes[opened ? 'Display' : null]
             ].join(' ')}
           >
-            <p>{exercisesList[exerciseID].directives}</p>
+            <p>{exercise.directives}</p>
           </div>
         </li>
       );
@@ -57,7 +59,7 @@ class ExerciseItem extends Component {
 
 const mapStateToProps = state => {
   return {
-    exercisesList: state.exercises.exercises.exercisesList
+    exercises: state.exercises.exercises
   };
 };
 
