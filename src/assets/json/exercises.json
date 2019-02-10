@@ -1,25 +1,29 @@
 {
-  "skills": [
+  "skills-b": [
     "straightArms",
+    "stutterStep",
+    "thumbsOnly",
+    "precisionFeet",
+    "footSlab",
+    "twoPoints",
+    "oneArmTraverse"
+  ],
+  "skills-i": [
     "restPractice",
     "speedClimbing",
+    "downclimbing",
+    "blinkingDrill",
+    "jibsOnly",
+    "blindDynos",
+    "pocketDynos"
+  ],
+  "skills-a": [
     "findingCalm",
     "movementPerfection",
     "momentumClimbing",
-    "stutterStep",
-    "thumbsOnly",
-    "downclimbing",
     "toeingHard",
     "pullingFeet",
-    "precisionFeet",
-    "footSlab",
-    "blinkingDrill",
-    "jibsOnly",
     "glueFeet",
-    "twoPoints",
-    "oneArmTraverse",
-    "blindDynos",
-    "pocketDynos",
     "deadpoints",
     "targetCampusing"
   ],
@@ -66,146 +70,146 @@
   ],
   "endur-p": ["linkedBoulderCircuit", "routeIntervals", "redpointAttempts"],
   "endur-s": ["outdoorMileage", "warmUpBoulderLadder", "hardBouldering"],
-  "perf-p": ["redpointAttempts", "onsightAttempts", "boulderAttempts"],
+  "perf-p": ["redpointAttempts", "onsightAttempts", "boulderAttempts", "warmUpBoulderLadder"],
   "perf-s": ["outdoorMileage", "warmUpBoulderLadder", "hardBouldering"],
   "rest-s": ["aerobicExercise", "crossTraining"],
   "exercisesList": {
     "straightArms": {
       "tools": ["none"],
-      "directives": "(Skill - Beginner) While traversing an indoor circuit, attempt to keep the elbows virtually loched, by hanging with straight arms and a low center of gravity. Utilizes flags, backsteps, and crosses to maintain straight arms while traversing accross the wall.",
+      "directives": "While traversing an indoor circuit, attempt to keep the elbows virtually loched, by hanging with straight arms and a low center of gravity. Utilizes flags, backsteps, and crosses to maintain straight arms while traversing accross the wall.",
       "title": "Straight Arms",
       "type": ["skill"]
     },
 
     "restPractice": {
       "tools": ["none"],
-      "directives": "(Skill - Intermediate) While traversing an indoor circuit or climbing an outdoor warm-up, seek and practice novel rest stances, especially \"no-hands\" or other easy stances involving stems, kneebars, drop-knees, jams, thumb wraps, etc.",
+      "directives": "While traversing an indoor circuit or climbing an outdoor warm-up, seek and practice novel rest stances, especially \"no-hands\" or other easy stances involving stems, kneebars, drop-knees, jams, thumb wraps, etc.",
       "title": "Rest Practice",
       "type": ["skill"]
     },
 
     "speedClimbing": {
       "tools": ["none"],
-      "directives": "(Skill - Intermediate) While toproping a familiar route indoors or out, climb as fast as you can. Time yourself and try to improve each attempt. Mentally reahearse the route beforehand to speed yourself up. Efficiency is not critical, so go \"all out\". The goal is to extend yout range of climbing pace so that you can climb faster when appropriate.",
+      "directives": "While toproping a familiar route indoors or out, climb as fast as you can. Time yourself and try to improve each attempt. Mentally reahearse the route beforehand to speed yourself up. Efficiency is not critical, so go \"all out\". The goal is to extend yout range of climbing pace so that you can climb faster when appropriate.",
       "title": "Speed Climbing",
       "type": ["skill"]
     },
 
     "findingCalm": {
       "tools": ["none"],
-      "directives": "(Skill - Advanced) While ARCing (boulder or toproping), plan a course that incorporates several dynamic moves. Consciously pause after each dyno to restart breathing with slow, deep breaths. Deliberately relax the grip, shift weight onto the feet, and if possible shake out.",
+      "directives": "While ARCing (boulder or toproping), plan a course that incorporates several dynamic moves. Consciously pause after each dyno to restart breathing with slow, deep breaths. Deliberately relax the grip, shift weight onto the feet, and if possible shake out.",
       "title": "Finding Calm",
       "type": ["skill"]
     },
 
     "movementPerfection": {
       "tools": ["none"],
-      "directives": "(Skill - Advanced) While bouldering indoors or outside, select a problem near your flash level and repeatedly climb the problem over several sessions, attempting to complete it as effeciently/effortlessly as possible. That drill can span seasons or years for some problems.",
+      "directives": "While bouldering indoors or outside, select a problem near your flash level and repeatedly climb the problem over several sessions, attempting to complete it as effeciently/effortlessly as possible. That drill can span seasons or years for some problems.",
       "title": "Movement Perfection",
       "type": ["skill"]
     },
 
     "momentumClimbing": {
       "tools": ["none"],
-      "directives": "(Skill - Advanced) While toproping or bouldering on moderate terrain, attempt to climb the route in one continuous movement. Try to minimize any pause in motion. Use a well-known route, at first, and mentally rehearse the sequences before beginning. As you progress, attempt this drill on lesser-known routes.",
+      "directives": "While toproping or bouldering on moderate terrain, attempt to climb the route in one continuous movement. Try to minimize any pause in motion. Use a well-known route, at first, and mentally rehearse the sequences before beginning. As you progress, attempt this drill on lesser-known routes.",
       "title": "Momentum Climbing",
       "type": ["skill"]
     },
 
     "stutterStep": {
       "tools": ["none"],
-      "directives": "(Skill - Beginner) While boulder traversing or toproping, the climber will make three foot movements for every one hand movement. Foot moves should be small and should allow the climber to fully weight his feet. If in a climbing gym, avoid pinching the handholds, which makes them unrealistically \"positive\".",
+      "directives": "While boulder traversing or toproping, the climber will make three foot movements for every one hand movement. Foot moves should be small and should allow the climber to fully weight his feet. If in a climbing gym, avoid pinching the handholds, which makes them unrealistically \"positive\".",
       "title": "Stutter Step",
       "type": ["skill"]
     },
 
     "thumbsOnly": {
       "tools": ["none"],
-      "directives": "(Skill - Beginner) While toproping a moderate, just-under-vertical route, attempt to climb using only the thumbs (and feet). Use a well-featured route and make small foot movements. Attempt to maintain smooth, flowing movement, which requires significant effort and control from the lower body. This drill can also be done with \"two fingers only\".",
+      "directives": "While toproping a moderate, just-under-vertical route, attempt to climb using only the thumbs (and feet). Use a well-featured route and make small foot movements. Attempt to maintain smooth, flowing movement, which requires significant effort and control from the lower body. This drill can also be done with \"two fingers only\".",
       "title": "Thumbs Only",
       "type": ["skill"]
     },
 
     "downclimbing": {
       "tools": ["none"],
-      "directives": "(Skill - Intermediate) On any terrain, indoor our out, climb down in addition to climbing up. Deliberately select footholds, guide your feet to them, and don't look away until they \"land\". Balance your body before moving the leading foot, and avoid large foot movements.",
+      "directives": "On any terrain, indoor our out, climb down in addition to climbing up. Deliberately select footholds, guide your feet to them, and don't look away until they \"land\". Balance your body before moving the leading foot, and avoid large foot movements.",
       "title": "Downclimbing",
       "type": ["skill"]
     },
 
     "toeingHard": {
       "tools": ["none"],
-      "directives": "(Skill - Advanced) On moderate terrain, attempt long reaches while concentrating on maximizing foot force throughout. The mind will try to focus exclusively on guiding the reaching hand, but also focus on the opposing foot, which drives the movement. Simultaneously guiding hands and feet in different tasks is difficult but critical.",
+      "directives": "On moderate terrain, attempt long reaches while concentrating on maximizing foot force throughout. The mind will try to focus exclusively on guiding the reaching hand, but also focus on the opposing foot, which drives the movement. Simultaneously guiding hands and feet in different tasks is difficult but critical.",
       "title": "Toeing Hard",
       "type": ["skill"]
     },
 
     "pullingFeet": {
       "tools": ["none"],
-      "directives": "(Skill - Advanced) While toproping on steep terrain with positive footholds, deliberately pull with your feet to keep your COM close to the wall. Make careful toe placements in the incut part of the hold, like fingers for max pulling power. Experiment with pulling and pushing in unison. Try it on a travers as well, pulling with the leading foot.",
+      "directives": "While toproping on steep terrain with positive footholds, deliberately pull with your feet to keep your COM close to the wall. Make careful toe placements in the incut part of the hold, like fingers for max pulling power. Experiment with pulling and pushing in unison. Try it on a travers as well, pulling with the leading foot.",
       "title": "Pulling Feet",
       "type": ["skill"]
     },
 
     "precisionFeet": {
       "tools": ["none"],
-      "directives": "(Skill - Beginner) While boulder traversing or toproping, make careful and precise foot placements. Select the bull's-eye on each foot-hold deliberately, and don't look away until your foot has reached the target. Take your time initially, then speed up as you gain proficiency. Sound provides immediate feedback, but toe accuracy is the ultimate goal, so focus on that.",
+      "directives": "While boulder traversing or toproping, make careful and precise foot placements. Select the bull's-eye on each foot-hold deliberately, and don't look away until your foot has reached the target. Take your time initially, then speed up as you gain proficiency. Sound provides immediate feedback, but toe accuracy is the ultimate goal, so focus on that.",
       "title": "Precision Feet",
       "type": ["skill"]
     },
 
     "footSlab": {
       "tools": ["none"],
-      "directives": "(Skill - Beginner) While standing near any wall with distinguishable features (not while climbing), stand on one leg, then pick out precise \"targets\" on the wall to aim for and touch with the toe of the free leg. Can be performed statically or dynamically.",
+      "directives": "While standing near any wall with distinguishable features (not while climbing), stand on one leg, then pick out precise \"targets\" on the wall to aim for and touch with the toe of the free leg. Can be performed statically or dynamically.",
       "title": "Foot Slab",
       "type": ["skill"]
     },
 
     "blinkingDrill": {
       "tools": ["none"],
-      "directives": "(Skill - Intermediate) While bouldering or toproping, visuallyidentify the desired foothold, memorize in spatial location, and then close your eyes while guiding your foot to the hold, making necessary adjusments by feel. Open your eyes to assess your performance, spot the next hold, and so on. Can also be performed with hands movements.",
+      "directives": "While bouldering or toproping, visuallyidentify the desired foothold, memorize in spatial location, and then close your eyes while guiding your foot to the hold, making necessary adjusments by feel. Open your eyes to assess your performance, spot the next hold, and so on. Can also be performed with hands movements.",
       "title": "Blinking Drill",
       "type": ["skill"]
     },
 
     "jibsOnly": {
       "tools": ["none"],
-      "directives": "(Skill - Intermediate) While bouldering or toproping indoors, restrict footholds to only screw-on holds (aka \"jibs\"), smears, molded features, or empty bolt holes (divots or ripples on larger holds can also be used).",
+      "directives": "While bouldering or toproping indoors, restrict footholds to only screw-on holds (aka \"jibs\"), smears, molded features, or empty bolt holes (divots or ripples on larger holds can also be used).",
       "title": "Jibs Only",
       "type": ["skill"]
     },
 
     "glueFeet": {
       "tools": ["none"],
-      "directives": "(Skill - Advanced) On any climbing terrain, climb as though your toes become \"frozen\" to the wall as soon as they land on the foothold (no pivoting, rotating or sliding allowed). As you move past the hold, flex at the ankle and forefoot to avoid pivoting on the hold.",
+      "directives": "On any climbing terrain, climb as though your toes become \"frozen\" to the wall as soon as they land on the foothold (no pivoting, rotating or sliding allowed). As you move past the hold, flex at the ankle and forefoot to avoid pivoting on the hold.",
       "title": "Glue Feet",
       "type": ["skill"]
     },
 
     "twoPoints": {
       "tools": ["none"],
-      "directives": "(Skill - Beginner) While climbing on any terrain, remove one foot from the wall (let it dangle) before and during every hand movement. This will ensure you keep only two points of contact (at most) with the rock, and will force a more-dynamic climbing style. It is permissible to have both feet on the wall, just not while reaching with a hand.",
+      "directives": "While climbing on any terrain, remove one foot from the wall (let it dangle) before and during every hand movement. This will ensure you keep only two points of contact (at most) with the rock, and will force a more-dynamic climbing style. It is permissible to have both feet on the wall, just not while reaching with a hand.",
       "title": "Two Points",
       "type": ["skill"]
     },
 
     "oneArmTraverse": {
       "tools": ["none"],
-      "directives": "(Skill - Beginner) While boulder-traversing on not-so-steep terrain with plenty of holds, climb with only one arm. After completing the traverse, try it again with the other arm. Use big holds, as this drill can be very pumpy.",
+      "directives": "While boulder-traversing on not-so-steep terrain with plenty of holds, climb with only one arm. After completing the traverse, try it again with the other arm. Use big holds, as this drill can be very pumpy.",
       "title": "One-Arm Traverse",
       "type": ["skill"]
     },
 
     "blindDynos": {
       "tools": ["none"],
-      "directives": "(Skill - Intermediate) While bouldering, select a group of handholds that allow you to repeatedly dyno back and forth without moving your feet. Practice these dynos several times, then try it with your eyes closed, using proprioceptive awareness to guide your hands to the hold.",
+      "directives": "While bouldering, select a group of handholds that allow you to repeatedly dyno back and forth without moving your feet. Practice these dynos several times, then try it with your eyes closed, using proprioceptive awareness to guide your hands to the hold.",
       "title": "Blind Dynos",
       "type": ["skill"]
     },
 
     "pocketDynos": {
       "tools": ["none"],
-      "directives": "(Skill - Intermediate) On a gym or home wall, set some simple boulder problems that require dynos to tight pockets (may be one-, two-, three-, or four-finger pockets). Rehearse the dynos several times in a session, and perform the drill frequently to develop accuracy.",
+      "directives": "On a gym or home wall, set some simple boulder problems that require dynos to tight pockets (may be one-, two-, three-, or four-finger pockets). Rehearse the dynos several times in a session, and perform the drill frequently to develop accuracy.",
       "title": "Pocket Dynos",
       "type": ["skill"]
     },
@@ -450,14 +454,14 @@
 
     "deadpoints": {
       "tools": ["none"],
-      "directives": "(Skill - Advanced) On a gym or home wall, set boulder-problem dynos with non-positive target holds (slopers, pinches). Latching these holds will require precise deadpoints. Rehearse the dynos repeatedly. An entire route or traverse can be constructed with such moves.",
+      "directives": "On a gym or home wall, set boulder-problem dynos with non-positive target holds (slopers, pinches). Latching these holds will require precise deadpoints. Rehearse the dynos repeatedly. An entire route or traverse can be constructed with such moves.",
       "title": "Deadpoints",
       "type": ["skill"]
     },
 
     "targetCampusing": {
       "tools": ["none"],
-      "directives": "(Skill - Advanced) On a campus board, use masking tape (or a thick mark) to create \"targets\" on specified rungs (place the tape on either side of the aim point to create a \"virtual pocket\"). While campusing, try to hit the targets.",
+      "directives": "On a campus board, use masking tape (or a thick mark) to create \"targets\" on specified rungs (place the tape on either side of the aim point to create a \"virtual pocket\"). While campusing, try to hit the targets.",
       "title": "Target Campusing",
       "type": ["skill"]
     },

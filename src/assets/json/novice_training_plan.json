@@ -3,38 +3,1446 @@
     {
       "id": "day-1",
       "phase": "base",
-      "primaryExercises": ["outdoorMileage"],
-      "secondaryExercises": ["restPractice"]
+      "exercises": {
+        "p-exer-1": {
+          "title": "outdoorMileage",
+          "type": "primary",
+          "data": false
+        }
+      }
     },
     {
       "id": "day-2",
-      "phase": "strength",
-      "primaryExercises": ["beginnerHangboard"],
-      "secondaryExercises": ["pushUps"]
+      "phase": "base",
+      "exercises": {
+        "p-exer-1": {
+          "title": "outdoorMileage",
+          "type": "primary",
+          "data": false
+        }
+      }
     },
     {
       "id": "day-3",
-      "phase": "power",
-      "primaryExercises": ["beginnerCampus"],
-      "secondaryExercises": ["pullUps"]
+      "phase": "base",
+      "exercises": {
+        "s-exer-1": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        }
+      }
     },
     {
       "id": "day-4",
-      "phase": "endur",
-      "primaryExercises": ["linkedBoulderCircuit"],
-      "secondaryExercises": ["legLifts"]
+      "phase": "base",
+      "exercises": {
+        "p-exer-1": {
+          "title": "arc",
+          "type": "primary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-5",
+      "phase": "perf",
+      "exercises": {
+        "s-exer-1": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        }
+      }
     },
     {
       "id": "day-6",
-      "phase": "perf",
-      "primaryExercises": ["redpointAttempts"],
-      "secondaryExercises": ["outdoorMileage"]
+      "phase": "base",
+      "exercises": {
+        "p-exer-1": {
+          "title": "arc",
+          "type": "primary",
+          "data": false
+        }
+      }
     },
     {
       "id": "day-7",
+      "phase": "perf",
+      "exercises": {
+        "s-exer-1": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-8",
+      "phase": "base",
+      "exercises": {
+        "p-exer-1": {
+          "title": "outdoorMileage",
+          "type": "primary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-9",
+      "phase": "base",
+      "exercises": {
+        "p-exer-1": {
+          "title": "outdoorMileage",
+          "type": "primary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-10",
+      "phase": "base",
+      "exercises": {
+        "p-exer-1": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-11",
+      "phase": "base",
+      "exercises": {
+        "p-exer-1": {
+          "title": "arc",
+          "type": "primary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-12",
+      "phase": "base",
+      "exercises": {
+        "p-exer-1": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-13",
+      "phase": "base",
+      "exercises": {
+        "p-exer-1": {
+          "title": "arc",
+          "type": "primary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-14",
+      "phase": "base",
+      "exercises": {
+        "p-exer-1": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-15",
+      "phase": "base",
+      "exercises": {
+        "p-exer-1": {
+          "title": "outdoorMileage",
+          "type": "primary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-16",
+      "phase": "base",
+      "exercises": {
+        "p-exer-1": {
+          "title": "outdoorMileage",
+          "type": "primary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-17",
+      "phase": "base",
+      "secondaryExercises": {
+        "p-exer-1": {
+          "title": "aerobicExercise",
+          "type": "primary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-18",
+      "phase": "base",
+      "exercises": {
+        "p-exer-1": {
+          "title": "arc",
+          "type": "primary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-19",
+      "phase": "base",
+      "exercises": {
+        "p-exer-1": {
+          "title": "arc",
+          "type": "primary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-20",
+      "phase": "base",
+      "exercises": {
+        "p-exer-1": {
+          "title": "arc",
+          "type": "primary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-21",
+      "phase": "base",
+      "exercises": {
+        "p-exer-1": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-22",
+      "phase": "base",
+      "exercises": {
+        "p-exer-1": {
+          "title": "outdoorMileage",
+          "type": "primary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-23",
+      "phase": "base",
+      "exercises": {
+        "p-exer-1": {
+          "title": "outdoorMileage",
+          "type": "primary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-24",
+      "phase": "base",
+      "exercises": {
+        "p-exer-1": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-25",
+      "phase": "base",
+      "exercises": {
+        "p-exer-1": {
+          "title": "arc",
+          "type": "primary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-26",
+      "phase": "base",
+      "exercises": {
+        "p-exer-1": {
+          "title": "arc",
+          "type": "primary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-27",
+      "phase": "base",
+      "exercises": {
+        "p-exer-1": {
+          "title": "arc",
+          "type": "primary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-28",
+      "phase": "base",
+      "exercises": {
+        "p-exer-1": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-29",
+      "phase": "strength",
+      "exercises": {
+        "p-exer-1": {
+          "title": "beginnerHangboard",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "pullUps",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-3": {
+          "title": "oneArmInvRow",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-4": {
+          "title": "lockOffLaps",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-30",
+      "phase": "strength",
+      "exercises": {
+        "s-exer-1": {
+          "title": "outdoorMileage",
+          "type": "secondary",
+          "data": false
+        },
+        "s-exer-2": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-31",
+      "phase": "strength",
+      "exercises": {
+        "s-exer-1": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-32",
+      "phase": "strength",
+      "exercises": {
+        "p-exer-1": {
+          "title": "beginnerHangboard",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "pushUps",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-3": {
+          "title": "shoulderPress",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-4": {
+          "title": "dips",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-33",
+      "phase": "strength",
+      "exercises": {
+        "s-exer-1": {
+          "title": "arc",
+          "type": "secondary",
+          "data": false
+        },
+        "s-exer-2": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-34",
+      "phase": "strength",
+      "exercises": {
+        "s-exer-1": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-35",
+      "phase": "strength",
+      "exercises": {
+        "p-exer-1": {
+          "title": "beginnerHangboard",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "hangingLegRaises",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-3": {
+          "title": "legLifts",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-4": {
+          "title": "latToFrontRaise",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-36",
+      "phase": "strength",
+      "exercises": {
+        "s-exer-1": {
+          "title": "outdoorMileage",
+          "type": "secondary",
+          "data": false
+        },
+        "s-exer-2": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-37",
+      "phase": "strength",
+      "exercises": {
+        "s-exer-1": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-38",
+      "phase": "strength",
+      "exercises": {
+        "p-exer-1": {
+          "title": "beginnerHangboard",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "bicepCurl",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-3": {
+          "title": "pullUps",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-4": {
+          "title": "oneArmInvRow",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-39",
+      "phase": "strength",
+      "exercises": {
+        "s-exer-1": {
+          "title": "arc",
+          "type": "secondary",
+          "data": false
+        },
+        "s-exer-2": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-40",
+      "phase": "strength",
+      "exercises": {
+        "s-exer-1": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-41",
+      "phase": "strength",
+      "exercises": {
+        "p-exer-1": {
+          "title": "beginnerHangboard",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "lockOffLaps",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-3": {
+          "title": "pushUps",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-4": {
+          "title": "shoulderPress",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-42",
+      "phase": "strength",
+      "exercises": {
+        "s-exer-1": {
+          "title": "arc",
+          "type": "secondary",
+          "data": false
+        },
+        "s-exer-2": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-43",
+      "phase": "strength",
+      "exercises": {
+        "s-exer-1": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-44",
+      "phase": "strength",
+      "exercises": {
+        "p-exer-1": {
+          "title": "beginnerHangboard",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "dips",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-3": {
+          "title": "hangingLegRaises",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-4": {
+          "title": "legLifts",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-45",
+      "phase": "strength",
+      "exercises": {
+        "s-exer-1": {
+          "title": "arc",
+          "type": "secondary",
+          "data": false
+        },
+        "s-exer-2": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-46",
+      "phase": "strength"
+    },
+    {
+      "id": "day-47",
+      "phase": "strength",
+      "exercises": {
+        "p-exer-1": {
+          "title": "beginnerHangboard",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "latToFrontRaise",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-3": {
+          "title": "bicepCurl",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-4": {
+          "title": "pullUps",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-48",
+      "phase": "strength"
+    },
+    {
+      "id": "day-49",
+      "phase": "strength"
+    },
+    {
+      "id": "day-50",
+      "phase": "power",
+      "exercises": {
+        "s-exer-1": {
+          "title": "warmUpBoulderLadder",
+          "type": "secondary",
+          "data": false
+        },
+        "s-exer-2": {
+          "title": "beginnerCampus",
+          "type": "primary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-51",
+      "phase": "power"
+    },
+    {
+      "id": "day-52",
+      "phase": "power"
+    },
+    {
+      "id": "day-53",
+      "phase": "power",
+      "exercises": {
+        "p-exer-1": {
+          "title": "limitBouldering",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "pullUps",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-3": {
+          "title": "oneArmInvRow",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-4": {
+          "title": "lockOffLaps",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-54",
+      "phase": "power"
+    },
+    {
+      "id": "day-55",
+      "phase": "power",
+      "exercises": {
+        "p-exer-1": {
+          "title": "warmUpBoulderLadder",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "beginnerCampus",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-3": {
+          "title": "pushUps",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-4": {
+          "title": "shoulderPress",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-5": {
+          "title": "dips",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-56",
+      "phase": "power"
+    },
+    {
+      "id": "day-57",
+      "phase": "power",
+      "exercises": {
+        "s-exer-1": {
+          "title": "limitBouldering",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-58",
+      "phase": "power",
+      "exercises": {
+        "s-exer-1": {
+          "title": "limitBouldering",
+          "type": "primary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-59",
+      "phase": "power"
+    },
+    {
+      "id": "day-60",
+      "phase": "power",
+      "exercises": {
+        "p-exer-1": {
+          "title": "warmUpBoulderLadder",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "beginnerCampus",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-3": {
+          "title": "hangingLegRaises",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-4": {
+          "title": "legLifts",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-5": {
+          "title": "latToFrontRaise",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-61",
+      "phase": "power"
+    },
+    {
+      "id": "day-62",
+      "phase": "power"
+    },
+    {
+      "id": "day-63",
+      "phase": "power",
+      "exercises": {
+        "p-exer-1": {
+          "title": "beginnerCampus",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "bicepCurl",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-3": {
+          "title": "pullUps",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-4": {
+          "title": "oneArmInvRow",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-64",
+      "phase": "power"
+    },
+    {
+      "id": "day-65",
+      "phase": "endur",
+      "exercises": {
+        "p-exer-1": {
+          "title": "warmUpBoulderLadder",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "linkedBoulderCircuit",
+          "type": "primary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-66",
+      "phase": "endur"
+    },
+    {
+      "id": "day-67",
+      "phase": "endur"
+    },
+    {
+      "id": "day-68",
+      "phase": "endur",
+      "exercises": {
+        "p-exer-1": {
+          "title": "warmUpBoulderLadder",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "linkedBoulderCircuit",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-3": {
+          "title": "lockOffLaps",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-4": {
+          "title": "pushUps",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-5": {
+          "title": "shoulderPress",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-69",
+      "phase": "endur"
+    },
+    {
+      "id": "day-70",
+      "phase": "endur"
+    },
+    {
+      "id": "day-71",
+      "phase": "endur",
+      "exercises": {
+        "p-exer-1": {
+          "title": "redpointAttempts",
+          "type": "primary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-72",
+      "phase": "endur",
+      "exercises": {
+        "p-exer-1": {
+          "title": "redpointAttempts",
+          "type": "primary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-73",
+      "phase": "endur"
+    },
+    {
+      "id": "day-74",
+      "phase": "endur"
+    },
+    {
+      "id": "day-75",
+      "phase": "endur",
+      "exercises": {
+        "p-exer-1": {
+          "title": "warmUpBoulderLadder",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "linkedBoulderCircuit",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-3": {
+          "title": "dips",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-4": {
+          "title": "hangingLegRaises",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-5": {
+          "title": "legLifts",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-76",
+      "phase": "endur"
+    },
+    {
+      "id": "day-77",
+      "phase": "endur"
+    },
+    {
+      "id": "day-78",
+      "phase": "endur",
+      "exercises": {
+        "p-exer-1": {
+          "title": "redpointAttempts",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "outdoorMileage",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-79",
+      "phase": "endur",
+      "exercises": {
+        "p-exer-1": {
+          "title": "redpointAttempts",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "outdoorMileage",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-80",
+      "phase": "endur"
+    },
+    {
+      "id": "day-81",
+      "phase": "endur"
+    },
+    {
+      "id": "day-82",
+      "phase": "endur",
+      "exercises": {
+        "p-exer-1": {
+          "title": "warmUpBoulderLadder",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "routeIntervals",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-3": {
+          "title": "latToFrontRaise",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-4": {
+          "title": "bicepCurl",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-5": {
+          "title": "pullUps",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-83",
+      "phase": "endur"
+    },
+    {
+      "id": "day-84",
+      "phase": "endur"
+    },
+    {
+      "id": "day-85",
+      "phase": "endur",
+      "exercises": {
+        "p-exer-1": {
+          "title": "redpointAttempts",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "outdoorMileage",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-86",
+      "phase": "perf",
+      "exercises": {
+        "p-exer-1": {
+          "title": "redpointAttempts",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "outdoorMileage",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-87",
+      "phase": "perf"
+    },
+    {
+      "id": "day-88",
+      "phase": "perf"
+    },
+    {
+      "id": "day-89",
+      "phase": "perf",
+      "exercises": {
+        "p-exer-1": {
+          "title": "warmUpBoulderLadder",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "routeIntervals",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-3": {
+          "title": "latToFrontRaise",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-4": {
+          "title": "bicepCurl",
+          "type": "secondary",
+          "data": false
+        },
+        "p-exer-5": {
+          "title": "pullUps",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-90",
+      "phase": "perf"
+    },
+    {
+      "id": "day-91",
+      "phase": "perf"
+    },
+    {
+      "id": "day-92",
+      "phase": "perf",
+      "exercises": {
+        "p-exer-1": {
+          "title": "redpointAttempts",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "outdoorMileage",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-93",
+      "phase": "perf",
+      "exercises": {
+        "p-exer-1": {
+          "title": "redpointAttempts",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "onsightAttempts",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-3": {
+          "title": "outdoorMileage",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-94",
+      "phase": "perf"
+    },
+    {
+      "id": "day-95",
+      "phase": "perf",
+      "exercises": {
+        "p-exer-1": {
+          "title": "redpointAttempts",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "outdoorMileage",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-96",
+      "phase": "perf",
+      "exercises": {
+        "p-exer-1": {
+          "title": "redpointAttempts",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "onsightAttempts",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-3": {
+          "title": "outdoorMileage",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-97",
+      "phase": "perf"
+    },
+    {
+      "id": "day-98",
+      "phase": "perf",
+      "exercises": {
+        "p-exer-1": {
+          "title": "redpointAttempts",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "onsightAttempts",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-3": {
+          "title": "outdoorMileage",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-99",
+      "phase": "perf"
+    },
+    {
+      "id": "day-100",
+      "phase": "perf",
+      "exercises": {
+        "p-exer-1": {
+          "title": "redpointAttempts",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "onsightAttempts",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-3": {
+          "title": "outdoorMileage",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-101",
+      "phase": "perf"
+    },
+    {
+      "id": "day-102",
+      "phase": "perf"
+    },
+    {
+      "id": "day-103",
+      "phase": "perf",
+      "exercises": {
+        "p-exer-1": {
+          "title": "warmUpBoulderLadder",
+          "type": "primary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-104",
+      "phase": "perf"
+    },
+    {
+      "id": "day-105",
+      "phase": "perf"
+    },
+    {
+      "id": "day-106",
+      "phase": "perf",
+      "exercises": {
+        "p-exer-1": {
+          "title": "redpointAttempts",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "onsightAttempts",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-3": {
+          "title": "outdoorMileage",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-107",
+      "phase": "perf",
+      "exercises": {
+        "p-exer-1": {
+          "title": "redpointAttempts",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-2": {
+          "title": "onsightAttempts",
+          "type": "primary",
+          "data": false
+        },
+        "p-exer-3": {
+          "title": "outdoorMileage",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-108",
+      "phase": "rest"
+    },
+    {
+      "id": "day-109",
       "phase": "rest",
-      "primaryExercises": [],
-      "secondaryExercises": ["aerobicExercise"]
+      "exercises": {
+        "s-exer-1": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        },
+        "s-exer-2": {
+          "title": "crossTraining",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-110",
+      "phase": "rest"
+    },
+    {
+      "id": "day-111",
+      "phase": "rest",
+      "exercises": {
+        "s-exer-1": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        },
+        "s-exer-2": {
+          "title": "crossTraining",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-112",
+      "phase": "rest"
+    },
+    {
+      "id": "day-113",
+      "phase": "rest",
+      "exercises": {
+        "s-exer-1": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        },
+        "s-exer-2": {
+          "title": "crossTraining",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-114",
+      "phase": "rest"
+    },
+    {
+      "id": "day-115",
+      "phase": "rest",
+      "exercises": {
+        "s-exer-1": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        },
+        "s-exer-2": {
+          "title": "crossTraining",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-116",
+      "phase": "rest"
+    },
+    {
+      "id": "day-117",
+      "phase": "rest",
+      "exercises": {
+        "s-exer-1": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        },
+        "s-exer-2": {
+          "title": "crossTraining",
+          "type": "secondary",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-118",
+      "phase": "rest"
+    },
+    {
+      "id": "day-119",
+      "phase": "rest",
+      "exercises": {
+        "s-exer-1": {
+          "title": "aerobicExercise",
+          "type": "secondary",
+          "data": false
+        },
+        "s-exer-2": {
+          "title": "crossTraining",
+          "type": "secondary",
+          "data": false
+        }
+      }
     }
   ]
 }

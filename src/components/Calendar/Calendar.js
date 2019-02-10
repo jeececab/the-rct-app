@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classes from './Calendar.module.css';
+import _ from 'lodash';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
@@ -8,24 +9,37 @@ import Button from '../UI/Button/Button';
 
 class Calendar extends Component {
   formatTitle = day => {
-    let exercise = null;
-    if (day.primaryExercises) {
-      exercise = day.primaryExercises[0];
-    } else if (day.secondaryExercises) {
-      exercise = day.secondaryExercises[0];
+    let exer = _.find(day.exercises, exer => {
+      return exer.type === 'primary';
+    });
+
+    if (exer === undefined) {
+      exer = _.find(day.exercises, exer => {
+        return exer.type === 'secondary';
+      });
     }
-    const title = exercise
+
+    if (exer === undefined) {
+      return null;
+    }
+
+    const formatedTitle = exer.title
       .replace(/([A-Z])/g, ' $1')
       .replace(/^./, function(str) {
         return str.toUpperCase();
       });
 
-    return title;
+    return formatedTitle;
   };
 
   getTitleStyle = day => {
     let style = null;
-    if (day.primaryExercises) {
+
+    let exer = _.find(day.exercises, exer => {
+      return exer.type === 'primary';
+    });
+
+    if (exer) {
       style = 'Primary';
     }
     return style;

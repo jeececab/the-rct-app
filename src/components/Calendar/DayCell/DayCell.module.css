@@ -1,11 +1,11 @@
 .DayCell {
   background: var(--black);
   border: 1px solid var(--darkgray);
-  color: var(--lightgray);
+  color: var(--gray);
   cursor: pointer;
   display: flex;
   flex-flow: column;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   justify-content: center;
   height: 3.38em;
   list-style: none;

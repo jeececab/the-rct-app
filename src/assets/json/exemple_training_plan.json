@@ -1,0 +1,94 @@
+{
+  "trainingDays": [
+    {
+      "id": "day-1",
+      "phase": "base",
+      "primaryExercises": {
+        "p-exer-1": {
+          "type": "outdoorMileage",
+          "data": false
+        }
+      },
+      "secondaryExercises": {
+        "s-exer-1": {
+          "type": "straightArms",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-2",
+      "phase": "strength",
+      "primaryExercises": {
+        "p-exer-1": {
+          "type": "beginnerHangboard",
+          "data": false
+        }
+      },
+      "secondaryExercises": {
+        "s-exer-1": {
+          "type": "pushUps",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-3",
+      "phase": "power",
+      "primaryExercises": {
+        "p-exer-1": {
+          "type": "beginnerCampus",
+          "data": false
+        }
+      },
+      "secondaryExercises": {
+        "s-exer-1": {
+          "type": "pullUps",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-4",
+      "phase": "endur",
+      "primaryExercises": {
+        "p-exer-1": {
+          "type": "linkedBoulderCircuit",
+          "data": false
+        }
+      },
+      "secondaryExercises": {
+        "s-exer-1": {
+          "type": "legLifts",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-5",
+      "phase": "perf",
+      "primaryExercises": {
+        "p-exer-1": {
+          "type": "redpointAttempts",
+          "data": false
+        }
+      },
+      "secondaryExercises": {
+        "s-exer-1": {
+          "type": "outdoorMileage",
+          "data": false
+        }
+      }
+    },
+    {
+      "id": "day-6",
+      "phase": "rest",
+      "secondaryExercises": {
+        "s-exer-1": {
+          "type": "aerobicExercise",
+          "data": false
+        }
+      }
+    }
+  ]
+}

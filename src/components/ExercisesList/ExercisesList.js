@@ -1,42 +1,26 @@
 import React from 'react';
 import classes from './ExercisesList.module.css';
+import _ from 'lodash'
 import ExerciseItem from './ExerciseItem/ExerciseItem';
 
 const ExercisesList = props => {
   const { day } = props;
 
-  let primaryExercises, secondaryExercises;
+  let exercises = <h3>Enjoy your rest day!</h3>;
 
-  if (day.primaryExercises) {
-    primaryExercises = day.primaryExercises.map(exer => {
+  if (day.exercises) {
+    exercises = _.map(day.exercises, (exer, exerId) => {
       return (
         <ExerciseItem
-          key={exer}
-          exerciseID={exer}
-          phase={day.phase}
+          key={exerId}
+          exerciseID={exer.title}
+          phase={exer.type === 'primary' ? day.phase : 'secondary'}
         />
       );
     });
   }
 
-  if (day.secondaryExercises) {
-    secondaryExercises = day.secondaryExercises.map(exer => {
-      return (
-        <ExerciseItem
-          key={exer}
-          exerciseID={exer}
-          phase="secondary"
-        />
-      );
-    });
-  }
-
-  return (
-    <ul className={classes.ExercisesList}>
-      {primaryExercises}
-      {secondaryExercises}
-    </ul>
-  );
+  return <ul className={classes.ExercisesList}>{exercises}</ul>;
 };
 
 export default ExercisesList;
