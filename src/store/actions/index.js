@@ -17,6 +17,7 @@ export {
   newSeasonStepBack,
   setTrainingPlan,
   setStartDate,
+  setSeasonTitle,
   confirmNewSeason
 } from './newSeasonActions';
 export { fetchSeason, initSeason } from './seasonActions';

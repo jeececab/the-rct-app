@@ -34,12 +34,20 @@ export const setStartDate = date => dispatch => {
   });
 };
 
-const exportNewSeason = (userId, template, trainingDays) => dispatch => {
+export const setSeasonTitle = title => dispatch => {
+  dispatch({
+    type: actionTypes.SET_SEASON_TITLE,
+    title: title
+  })
+}
+
+const exportNewSeason = (userId, template, trainingDays, title) => dispatch => {
   dispatch(requestStart())
   db.ref(`/users/${userId}/ongoingSeason/`).set(
     {
       template: template,
-      trainingDays: trainingDays
+      trainingDays: trainingDays,
+      title: title
     },
     error => {
       if (error) {
@@ -63,11 +71,11 @@ const mapDates = (trainingDays, date) => {
   return datedTrainingDays;
 };
 
-export const confirmNewSeason = (template, startDate, userId) => dispatch => {
+export const confirmNewSeason = (template, startDate, userId, title) => dispatch => {
   db.ref(`/training-plans/${template}`).once('value', snapshot => {
     const trainingDays = snapshot.val().trainingDays;
     const datedTrainingDays = mapDates(trainingDays, startDate);
-    dispatch(exportNewSeason(userId, template, datedTrainingDays));
+    dispatch(exportNewSeason(userId, template, datedTrainingDays, title));
     dispatch({
       type: actionTypes.CONFIRM_NEW_SEASON
     });

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import {
   setTrainingPlan,
   setStartDate,
+  setSeasonTitle,
   newSeasonStepBack,
   confirmNewSeason
 } from '../../store/actions';
@@ -14,18 +15,20 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 class NewSeason extends Component {
   state = {
-    changedDate: null
+    changedDate: null,
+    changedTitle: null
   };
 
-  componentWillMount() {
+  componentDidMount() {
     this.setState({
-      changedDate: null
+      changedDate: null,
+      changedTitle: null
     });
   }
 
   newSeasonStepBackHandler = step => {
     this.props.newSeasonStepBack(step);
-    this.setState({ changedDate: null });
+    this.setState({ changedDate: null, changedTitle: null });
   };
 
   choosePlanHandler = event => {
@@ -43,16 +46,24 @@ class NewSeason extends Component {
     this.props.setStartDate(this.state.changedDate);
   };
 
+  changeTitleHandler = event => {
+    this.setState({
+      changedTitle: event.target.value
+    });
+  };
+
+  submitTitleHandler = event => {
+    event.preventDefault();
+    this.props.setSeasonTitle(this.state.changedTitle);
+  };
+
   confirmNewSeasonHandler = () => {
-    this.props.confirmNewSeason(
-      this.props.trainingPlan,
-      this.props.startDate,
-      this.props.userId
-    );
+    const { trainingPlan, startDate, userId, title } = this.props;
+    this.props.confirmNewSeason(trainingPlan, startDate, userId, title);
   };
 
   render() {
-    const { isLoading, step, startDate, trainingPlan } = this.props;
+    const { isLoading, step, startDate, trainingPlan, title } = this.props;
 
     let UIstep = (
       <React.Fragment>
@@ -73,7 +84,7 @@ class NewSeason extends Component {
         <Button btnType="Link" clicked={this.choosePlanHandler}>
           Custom plan
         </Button>
-        <p>
+        <p className={classes.Note}>
           <b>Note:</b> you will be able to customize your chosen training plan
           as well.
         </p>
@@ -81,12 +92,11 @@ class NewSeason extends Component {
     );
 
     if (isLoading) {
-      UIstep = <Spinner />
+      UIstep = <Spinner />;
     }
 
-    const isInvalid = this.state.changedDate === null;
-
     if (step === 'step2') {
+      const isInvalid = this.state.changedDate === null;
       UIstep = (
         <React.Fragment>
           <h3>Step 2 - Choose a starting date</h3>
@@ -116,20 +126,55 @@ class NewSeason extends Component {
     }
 
     if (step === 'step3') {
+      const isInvalid = this.state.changedTitle === null;
+      UIstep = (
+        <React.Fragment>
+          <h3>Step 3 - Choose a season title</h3>
+          <form onSubmit={this.submitTitleHandler}>
+            <input
+              className={classes.Title}
+              onChange={this.changeTitleHandler}
+            />
+
+            <p className={classes.Note}>
+              (Exemple: Winter-Spring 2019, Indian Creek Preparation, etc.)
+            </p>
+
+            <div className={classes.Btns}>
+              <Button
+                btnType="Link-danger"
+                clicked={() => this.newSeasonStepBackHandler('step2')}
+                type="button"
+              >
+                Back
+              </Button>
+              <Button btnType="Link" type="submit" disabled={isInvalid}>
+                Continue
+              </Button>
+            </div>
+          </form>
+        </React.Fragment>
+      );
+    }
+
+    if (step === 'step4') {
       const date = new Date(startDate);
 
       UIstep = (
         <React.Fragment>
-          <h3>Step 3 - Confirmation</h3>
-          <h4>
+          <h3>Step 4 - Confirmation</h3>
+          <p>
             {trainingPlan.charAt(0).toUpperCase() + trainingPlan.slice(1)}{' '}
             training plan
-          </h4>
-          <h4>Starting on {date.toDateString()}</h4>
+          </p>
+          <p>Starting on {date.toDateString()}</p>
+          <p>
+            Titled <b>{title}</b>
+          </p>
           <div className={classes.Btns}>
             <Button
               btnType="Link-danger"
-              clicked={() => this.newSeasonStepBackHandler('step2')}
+              clicked={() => this.newSeasonStepBackHandler('step3')}
             >
               Back
             </Button>
@@ -150,6 +195,7 @@ const mapStateToProps = state => {
     step: state.newSeason.newSeasonStep,
     startDate: state.newSeason.startDate,
     trainingPlan: state.newSeason.trainingPlan,
+    title: state.newSeason.title,
     userId: state.auth.authUser.uid,
     isLoading: state.request.loading
   };
@@ -160,6 +206,7 @@ export default connect(
   {
     setTrainingPlan,
     setStartDate,
+    setSeasonTitle,
     newSeasonStepBack,
     confirmNewSeason
   }

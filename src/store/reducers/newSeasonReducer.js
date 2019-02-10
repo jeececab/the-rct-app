@@ -4,7 +4,8 @@ const INITIAL_STATE = {
   newSeasonStep: null,
   startDate: null,
   startingNewSeason: false,
-  trainingPlan: null
+  trainingPlan: null,
+  title: null
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -19,9 +20,11 @@ export default (state = INITIAL_STATE, action) => {
       if (action.step === null) {
         newState = { ...INITIAL_STATE };
       } else if (action.step === 'step1') {
-        newState = { trainingPlan: null, startDate: null };
+        newState = { trainingPlan: null, startDate: null, title: null };
       } else if (action.step === 'step2') {
         newState = { startDate: null };
+      } else if (action.step === 'step3') {
+        newState = { title: null };
       }
       return {
         ...state,
@@ -40,11 +43,17 @@ export default (state = INITIAL_STATE, action) => {
         startDate: action.startDate,
         newSeasonStep: 'step3'
       };
+    case actionTypes.SET_SEASON_TITLE:
+      return {
+        ...state,
+        title: action.title,
+        newSeasonStep: 'step4'
+      };
     case actionTypes.CONFIRM_NEW_SEASON:
       return {
         ...state,
         ...INITIAL_STATE
-      }
+      };
     default:
       return state;
   }

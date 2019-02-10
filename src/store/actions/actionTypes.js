@@ -18,6 +18,7 @@ export const START_NEW_SEASON = 'START_NEWSEASON';
 export const NEW_SEASON_STEP_BACK = 'NEW_SEASON_STEP_BACK';
 export const SET_TRAINING_PLAN = 'SET_TRAINING_PLAN';
 export const SET_START_DATE = 'SET_STARTDATE';
+export const SET_SEASON_TITLE = 'SET_SEASON_TITLE'
 export const CONFIRM_NEW_SEASON = 'CONFIRM_NEW_SEASON';
 
 // Exercises action types

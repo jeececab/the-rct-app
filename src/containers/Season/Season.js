@@ -39,7 +39,12 @@ class Season extends Component {
     }
 
     if (ongoingSeason) {
-      season = <Calendar />;
+      season = (
+        <React.Fragment>
+          <h1>{ongoingSeason.title}</h1>
+          <Calendar />
+        </React.Fragment>
+      );
     } else if (ongoingSeason === null) {
       season = (
         <h3>
@@ -53,7 +58,6 @@ class Season extends Component {
 
     return (
       <div className={classes.Season}>
-        <h1>Season</h1>
         {season}
         <Modal
           show={this.props.startingNewSeason}
