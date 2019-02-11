@@ -41,7 +41,7 @@ class Season extends Component {
     if (ongoingSeason) {
       season = (
         <React.Fragment>
-          <h1>{ongoingSeason.title}</h1>
+          <h2>{ongoingSeason.title}</h2>
           <Calendar />
         </React.Fragment>
       );

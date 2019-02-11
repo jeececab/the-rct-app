@@ -9,11 +9,11 @@ class Account extends Component {
   render() {
     return (
       <div className={classes.Account}>
-        <h1>My Account</h1>
-        <h3>Change email</h3>
-        <h3>Change password</h3>
-        <h3>Change username</h3>
-        <h3>Check past seasons</h3>
+        <h2>My Account</h2>
+        <p>Change email</p>
+        <p>Change password</p>
+        <p>Change username</p>
+        <p>Check past seasons</p>
       </div>
     );
   }
