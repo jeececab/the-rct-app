@@ -3,7 +3,7 @@ import classes from './ExerciseItem.module.css';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import Button from '../../UI/Button/Button';
-import RouteAdder from '../../RouteAdder/RouterAdder';
+import RouteAdder from '../../RouteAdder/RouteAdder';
 
 class ExerciseItem extends Component {
   state = {
