@@ -21,7 +21,8 @@
 
 .DateNb {
   background: var(--black);
-  font-size: 0.8rem;
+  color: var(--white);
+  font-size: 0.7rem;
   font-weight: 300;
   padding: 0 0 0 0.2em;
   position: absolute;

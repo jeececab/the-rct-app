@@ -68,7 +68,7 @@
     },
     {
       "id": "day-7",
-      "phase": "perf",
+      "phase": "base",
       "exercises": {
         "s-exer-1": {
           "title": "aerobicExercise",

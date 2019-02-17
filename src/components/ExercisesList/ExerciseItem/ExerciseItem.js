@@ -16,7 +16,7 @@ class ExerciseItem extends Component {
   };
 
   deleteExerciseHandler = () => {
-    console.log(this.props.key)
+    console.log(this.props.id)
   }
 
   formatTitle = exer => {
@@ -36,7 +36,7 @@ class ExerciseItem extends Component {
       const exercise = exercises.exercisesList[exerciseID]
 
       exerItemUI = (
-        <li className={[classes.ExerciseItem, classes[phase]].join(' ')}>
+        <li id={this.props.id} className={[classes.ExerciseItem, classes[phase]].join(' ')}>
           <h3 onClick={this.toggleContentHandler}>
             {this.formatTitle(exerciseID)}
           </h3>
