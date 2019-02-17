@@ -14,7 +14,7 @@ const ExercisesList = props => {
         <ExerciseItem
           key={exerId}
           id={exerId}
-          exerciseID={exer.title}
+          exerciseTitle={exer.title}
           phase={exer.type === 'primary' ? day.phase : 'secondary'}
         />
       );

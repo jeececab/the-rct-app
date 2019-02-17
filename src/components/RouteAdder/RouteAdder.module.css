@@ -1,0 +1,52 @@
+.RouteAdder {
+  background: var(--black);
+  border: 1px solid var(--darkgray);
+  margin: 0 auto;
+  width: 95%;
+}
+
+.Inputs {
+  display: grid;
+  grid-template-columns: 3.8em 1fr;
+  grid-gap: 0.5em;
+  padding: 0.5em 0.5em 0 0.5em;
+  /* margin-bottom: 0.5em; */
+}
+
+.Inputs input {
+  padding: 0.1em;
+}
+
+@media (min-width: 29em) {
+  .Inputs {
+    grid-template-columns: 1fr 1fr 3.8em 7.7em;
+  }
+}
+
+.Route_name {
+  grid-column: 1 / span 2;
+}
+
+.Route_grade {
+  max-width: 3.8em;
+}
+
+.Route_status,
+.boulder__status {
+  max-width: 7.7em;
+}
+
+.Route_notes {
+  grid-column: 1 / span 2;
+  min-height: 4em;
+  padding: 0.5em;
+  outline: none;
+  resize: none;
+  padding: 0.1em;
+}
+
+@media (min-width: 29em) {
+  .Route_notes {
+    grid-column: 1 / span 4;
+  }
+}
