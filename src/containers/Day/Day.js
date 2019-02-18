@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import Button from '../../components/UI/Button/Button';
 import ExercisesList from '../../components/ExercisesList/ExercisesList';
 
 class Day extends Component {
@@ -12,6 +13,10 @@ class Day extends Component {
     const newDayNb = currentDayNb + nb;
     this.props.history.push(`${ROUTES.TRAINING_DAYS}/day-${newDayNb}`);
   };
+
+  addExerciseHandler = day => {
+    console.log(day)
+  }
 
   componentDidUpdate() {
     if(this.props.ongoingSeason === null) {
@@ -32,6 +37,7 @@ class Day extends Component {
           <React.Fragment>
             <h2>{day.date.slice(0, -5)}</h2>
             <ExercisesList day={day} />
+            <Button btnType="Secondary-small" clicked={() => this.addExerciseHandler(day)}>Add exercise</Button>
             <div className={classes.Arrows}>
               {day.id === 'day-1' ? (
                 <div />

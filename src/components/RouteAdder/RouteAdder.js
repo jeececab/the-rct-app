@@ -3,6 +3,15 @@ import classes from './RouteAdder.module.css';
 import Button from '../UI/Button/Button';
 
 class RouteAdder extends Component {
+  state = {
+    routeName: this.props.data.routeName,
+    routeGrade: this.props.data.routeGrade,
+    routeStatus: this.props.data.routeStatus,
+    routeNotes: this.props.data.routeNotes
+  };
+
+  onChange = () => {};
+
   deleteRouteHandler = event => {
     event.preventDefault();
     console.log(event.target);
@@ -14,14 +23,16 @@ class RouteAdder extends Component {
         <form>
           <div className={classes.Inputs}>
             <input
-              value={this.props.data.routeName}
+              value={this.state.routeName}
+              onChange={this.onChange}
               type="text"
               className={classes.Route_name}
               name="route_name"
               placeholder="Route Name"
             />
             <input
-              value={this.props.data.routeGrade}
+              value={this.state.routeGrade}
+              onChange={this.onChange}
               type="text"
               className={classes.Route_grade}
               name="route_grade"
@@ -29,6 +40,7 @@ class RouteAdder extends Component {
             />
             <select
               value={this.props.data.routeStatus}
+              onChange={this.onChange}
               className={classes.Route_status}
               name="route_status"
             >
@@ -39,7 +51,8 @@ class RouteAdder extends Component {
               <option value="Not sent yet">Not sent yet</option>
             </select>
             <textarea
-              value={this.props.data.routeNotes}
+              value={this.state.routeNotes}
+              onChange={this.onChange}
               className={classes.Route_notes}
               name="route_notes"
               placeholder="Notes"
